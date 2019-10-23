@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.4.1",
+    "jshint": "^2.10.2",
     "react": "^16.10.2",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.0",
+    "styled-reset": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +32,19 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "auto-changelog": "^1.16.1"
+  },
+  "auto-changelog": {
+    "output": "HISTORY.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false,
+    "includeBranch": [
+      "release-v2",
+      "release-v3"
     ]
   }
 }
