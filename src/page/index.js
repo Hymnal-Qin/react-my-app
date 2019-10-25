@@ -1,8 +1,16 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy, Component } from "react";
 import Game from "../components/Game";
 import Clock from "../components/Clock";
-import IconImage from "../components/IconImage";
 import styled from "styled-components";
+import Button from "../components/button/Button";
+import PropTypes from "prop-types";
+import Select from "../components/input/Select";
+import File from "../components/input/File";
+import Textarea from "../components/input/Textarea";
+import { white } from "../components/values/colors";
+import Tile from "../components/image/Tile";
+
+const IconImage = lazy(() => import("../components/IconImage"));
 
 const Wrapper = styled.section`
 	height: 100vh;
@@ -44,20 +52,54 @@ const Wrapper = styled.section`
 	}
 `;
 
-const Index = () => {
-	return (
-		<Suspense fallback={<div>Loading</div>}>
-			<Wrapper>
-				<section className='btns'>
-					<IconImage path={`share/`} />
-				</section>
+class Index extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			login: "Sign In 登录"
+		};
+	}
 
-				<Clock />
-				<Game />
-			</Wrapper>
-		</Suspense>
-	);
-};
+	handleSubmit(e) {
+		e.preventDefault();
+		console.log("跳转登录");
+		const username = "qxj"; //e.target.elements[0].value;
+		const path = `/login`;
+		this.props.history.push(path);
+	}
+
+	render() {
+		return (
+			<Suspense fallback={<div>Loading</div>}>
+				<Wrapper>
+					<section className='btns'>
+						<IconImage path={`share/`} />
+						<Button
+							type='button'
+							theme='primary'
+							disabled={false}
+							onClick={() => this.props.history.push(`login`)}>
+							{this.state.login}
+						</Button>
+						<Select fullWidth={true}>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+						</Select>
+						<File></File>
+						<Textarea fullWidth={true}></Textarea>
+						<Tile
+							image={"http://localhost:7000/images/stock/women/1.jpg"}></Tile>
+					</section>
+
+					<Clock />
+					<Game />
+				</Wrapper>
+			</Suspense>
+		);
+	}
+}
 
 // function Index() {
 //   return (<div></div>);

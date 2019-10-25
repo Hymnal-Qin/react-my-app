@@ -7,8 +7,8 @@ class TodoApp extends Component {
 			items: [],
 			text: ""
 		};
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		// this.handleChange = this.handleChange.bind(this);
+		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	render() {
 		return (
@@ -28,11 +28,11 @@ class TodoApp extends Component {
 		);
 	}
 
-	handleChange(e) {
+	handleChange = e => {
 		this.setState({ text: e.target.value });
-	}
+	};
 
-	handleSubmit(e) {
+	handleSubmit = e => {
 		e.preventDefault();
 		if (!this.state.text.length) {
 			return;
@@ -46,7 +46,7 @@ class TodoApp extends Component {
 			items: state.items.concat(newItem),
 			text: ""
 		}));
-	}
+	};
 }
 
 class TodoList extends React.Component {
@@ -54,7 +54,10 @@ class TodoList extends React.Component {
 		return (
 			<ul>
 				{this.props.items.map(item => (
-					<li key={item.id}>{item.text}</li>
+					<li key={item.id}>
+						{item.id}
+						{item.text}
+					</li>
 				))}
 			</ul>
 		);

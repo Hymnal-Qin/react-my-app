@@ -1,0 +1,69 @@
+// Imports
+import React from "react";
+import styled from "styled-components";
+
+import PropTypes from "prop-types";
+
+// UI Imports
+import { grey2, grey4, black } from "../values/colors";
+
+const Textarea = styled.textarea`
+	outline: none;
+	color: ${black};
+	padding-top: 0.8em;
+	padding-bottom: 0.4em;
+	font-size: 1em;
+	border: none;
+	background-color: transparent;
+	border-bottom: 1px solid ${grey2};
+	width: ${props => (props.fullWidth ? "100%" : "auto")};
+
+	:hover {
+		border-bottom: 1px solid ${grey4};
+	}
+	:active {
+		border-bottom: 1px solid ${grey4};
+	}
+`;
+
+// Component
+// const Textarea = props => {
+// 	const { children, fullWidth, ...other } = props;
+
+// 	return (
+// 		<span>
+// 			<textarea {...other}>{children}</textarea>
+
+// 			{/* language=CSS */}
+// 			<style jsx>{`
+// 				textarea {
+// 					outline: none;
+// 					color: ${black};
+// 					padding-top: 0.8em;
+// 					padding-bottom: 0.4em;
+// 					font-size: 1em;
+// 					border: none;
+// 					background-color: transparent;
+// 					border-bottom: 1px solid ${grey2};
+// 					width: ${fullWidth ? "100%" : "auto"};
+// 				}
+// 				textarea:hover {
+// 					border-bottom: 1px solid ${grey4};
+// 				}
+// 				textarea:active {
+// 					border-bottom: 1px solid ${grey4};
+// 				}
+// 			`}</style>
+// 		</span>
+// 	);
+// };
+
+// Component Properties
+Textarea.propTypes = {
+	fullWidth: PropTypes.bool
+};
+Textarea.defaultProps = {
+	fullWidth: false
+};
+
+export default Textarea;
