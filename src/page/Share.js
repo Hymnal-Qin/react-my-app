@@ -1,6 +1,6 @@
 import React from "react";
-import Todo from "../components/TodoApp";
-import JX from "../components/JX";
+import Todo from "../modules/TodoApp";
+import JX from "../modules/JX";
 import $ from "jquery";
 
 const Share = () => {

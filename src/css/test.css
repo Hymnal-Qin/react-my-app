@@ -1,3 +1,16 @@
-.div {
-  
+header {
+	background-image: none;
+	box-shadow: none;
+	position: fixed;
+}
+
+footer {
+	padding-left: 16px !important;
+	padding-right: 16px !important;
+	max-width: 1012px !important;
+	margin-right: auto;
+	margin-left: auto;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  color: #586069 !important;
 }

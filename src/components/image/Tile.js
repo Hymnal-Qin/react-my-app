@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 const Tile = props => {
 	const { children, image, width, height, style, shadow, ...others } = props;
 	const Div = styled.div`
-		width: ${width};
-		height: ${height};
 		background-image: url(${image});
 		background-size: 100% auto;
 		box-shadow: ${shadow ? shadow : "none"};
@@ -40,14 +38,14 @@ const Tile = props => {
 Tile.propTypes = {
 	image: PropTypes.string.isRequired,
 	style: PropTypes.object,
-	width: PropTypes.string,
-	height: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
 	shadow: PropTypes.string
 };
 
 Tile.defaultProps = {
 	style: {},
-	width: "100px",
-	height: "100px"
+	width: "100%",
+	height: "100%"
 };
 export default Tile;

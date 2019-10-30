@@ -1,29 +1,30 @@
-import React, { Component } from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	HashRouter
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import Home from "./page/index";
-import Share from "./page/share";
-import GlobalStyle from "./Global.style";
-import Login from "./page/login";
+import { routes } from "./settings/routes";
+
+import Layout from "./modules/common/Layout";
+
 const history = createBrowserHistory();
+
 const App = () => {
 	return (
-		<div>
-			<GlobalStyle />
-			<Router history={history}>
+		<Router history={history}>
+			{/* Layout 带自定义头部的布局 */}
+			<Layout>
+				{/* route 路由 */}
 				<Switch>
-					<Route path={`/`} exact component={Home} />
-					<Route path={`/share/`} component={Share} />
-					<Route path={`/s`} component={Share} />
-					<Route path={`/login`} component={Login} />
+					{Object.values(routes).map((route, index) => (
+						<Route
+							{...route}
+							key={index}
+							path={
+								typeof route.path === "function" ? route.path() : route.path
+							}></Route>
+					))}
 				</Switch>
-			</Router>
-		</div>
+			</Layout>
+		</Router>
 	);
 };
 export default App;

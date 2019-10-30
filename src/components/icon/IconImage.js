@@ -1,12 +1,17 @@
-import React from "react";
+import React, { lazy } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Icon from "./Icon";
+const Icon = lazy(() => import("./Icon"));
 
-const IconImage = ({ path = "" }) => {
+const IconImage = ({ url = null, path = "" }) => {
+
+
+
 	return (
 		<Link to={path}>
-			<Icon
-				icon={
+			<Icon>
+				{
 					<svg
 						t='1569320467584'
 						className='icon'
@@ -25,7 +30,8 @@ const IconImage = ({ path = "" }) => {
 							fill='#cc8fbaff'
 							p-id='1778'></path>
 					</svg>
-				}></Icon>
+				}
+			</Icon>
 		</Link>
 	);
 };

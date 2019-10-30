@@ -15,7 +15,7 @@ const Div = styled.div`
 `;
 
 const Label = styled.label`
-	display: block;
+	display: inline-block;
 	padding: 0.8em 1.8em;
 	border: none;
 	border-radius: 1.4em;

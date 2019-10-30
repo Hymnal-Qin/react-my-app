@@ -10,7 +10,6 @@ import {
 import { level1, level2, level3, level4 } from "../values/shadows";
 
 const Button = styled.button`
-	margin: 0.4em;
 	padding: 0.7em 1.7em;
 	border: none;
 	border-radius: 1.4em;

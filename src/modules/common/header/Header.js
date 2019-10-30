@@ -1,0 +1,67 @@
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { primary } from "../../../components/values/gradients";
+import { level1 } from "../../../components/values/shadows";
+import Grid from "../../../components/grid/Grid";
+import GridCell from "../../../components/grid/GridCell";
+import Menu from "./Menu";
+import MenuItem from "./MenuItem";
+import route from "../../../settings/routes/home";
+import home from "../../../settings/routes/home";
+import Logo from "./Logo";
+
+const Header = props => {
+	const Header = styled.header`
+		background-image: ${primary};
+		box-shadow: ${level1};
+		padding: 0 2em;
+		height: 5em;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+	`;
+
+	return (
+		<Header>
+			<Grid alignCenter={true} style={{ marginTop: "1.5em" }}>
+				<GridCell>
+					{/* Logo */}
+					<Logo style={{ float: "left" }} />
+					{/* Left Menu */}
+					<Menu
+						style={{ float: "left", marginTop: "0.5em", marginLeft: "2em" }}>
+						<MenuItem>Men</MenuItem>
+
+						<MenuItem>Women</MenuItem>
+
+						<MenuItem>How It Works</MenuItem>
+
+						<MenuItem>What's New</MenuItem>
+					</Menu>
+				</GridCell>
+
+				<GridCell style={{ textAlign: "right" }}>
+					{/* Right Menu */}
+					<Menu>
+						<MenuItem to={home.login.path}>SignIn</MenuItem>
+
+						<MenuItem>SignUp</MenuItem>
+					</Menu>
+				</GridCell>
+			</Grid>
+		</Header>
+	);
+};
+
+// Component Properties
+Header.propTypes = {
+	user: PropTypes.object.isRequired
+};
+
+Header.defaultProps = {
+	user: {}
+};
+
+export default Header;
