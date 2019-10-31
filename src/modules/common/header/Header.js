@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+
+// UI
 import { primary } from "../../../components/values/gradients";
 import { level1 } from "../../../components/values/shadows";
-import Grid from "../../../components/grid/Grid";
-import GridCell from "../../../components/grid/GridCell";
+import { Grid, GridCell } from "../../../components/grid";
+
+// Module
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
-import route from "../../../settings/routes/home";
-import home from "../../../settings/routes/home";
 import Logo from "./Logo";
+
+// route
+import { routes } from "../../../settings/routes";
+
+const loginPath = () => routes.login.path;
 
 const Header = props => {
 	const Header = styled.header`
@@ -45,7 +51,7 @@ const Header = props => {
 				<GridCell style={{ textAlign: "right" }}>
 					{/* Right Menu */}
 					<Menu>
-						<MenuItem to={home.login.path}>SignIn</MenuItem>
+						<MenuItem to={loginPath()}>SignIn</MenuItem>
 
 						<MenuItem>SignUp</MenuItem>
 					</Menu>

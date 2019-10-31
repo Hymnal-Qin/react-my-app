@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 // css
 import GlobalStyle from "./css/Global.style";
+import { APP_URL } from "./settings/config/env";
 
 // ========================================
 const Index = () => {
@@ -15,3 +16,5 @@ const Index = () => {
 	);
 };
 ReactDOM.render(<Index />, document.getElementById("root"));
+
+console.log(APP_URL);

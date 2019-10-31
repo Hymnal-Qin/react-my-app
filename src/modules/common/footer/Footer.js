@@ -1,7 +1,9 @@
 import React from "react";
-import { black, white } from "../../../components/values/colors";
-import Grid from "../../../components/grid/Grid";
-import GridCell from "../../../components/grid/GridCell";
+
+// UI
+import { Grid, GridCell } from "../../../components/grid";
+
+// Module
 import Clock from "../../Clock";
 
 const Footer = props => {

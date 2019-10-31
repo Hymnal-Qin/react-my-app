@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 
-import SignIn from "../modules/user/SignIn";
-import Grid from "../components/grid/Grid";
-import GridCell from "../components/grid/GridCell";
-import Tile from "../components/image/Tile";
-import { level1 } from "../components/values/shadows";
+// UI
+import { Grid, GridCell } from "../../components/grid";
+import { Tile } from "../../components/image";
+import { level1 } from "../../components/values/shadows";
+
+// Module
+import SignIn from "../../modules/user/SignIn";
+import { APP_URL } from "../../settings/config/env";
 
 class Login extends Component {
 	constructor(props) {
@@ -43,7 +46,7 @@ class Login extends Component {
 								width={300}
 								height={530}
 								shadow={level1}
-								image={"./image/stock/women/1.jpg"}></Tile>
+								image={`${APP_URL}/images/stock/women/1.jpg`}></Tile>
 						</GridCell>
 						<GridCell>
 							<Grid>
@@ -52,7 +55,7 @@ class Login extends Component {
 										width={170}
 										height={250}
 										shadow={level1}
-										image={"./image/stock/women/2.jpg"}></Tile>
+										image={`${APP_URL}/images/stock/women/2.jpg`}></Tile>
 								</GridCell>
 							</Grid>
 							<Grid>
@@ -62,7 +65,7 @@ class Login extends Component {
 										height={250}
 										shadow={level1}
 										style={{ marginTop: "1.9em" }}
-										image={"./image/stock/women/3.jpg"}></Tile>
+										image={`${APP_URL}/images/stock/women/3.jpg`}></Tile>
 								</GridCell>
 							</Grid>
 						</GridCell>

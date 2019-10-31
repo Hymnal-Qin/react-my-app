@@ -15,6 +15,7 @@ const App = () => {
 				{/* route 路由 */}
 				<Switch>
 					{Object.values(routes).map((route, index) => (
+						//遍历注册路由
 						<Route
 							{...route}
 							key={index}

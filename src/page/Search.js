@@ -3,7 +3,7 @@ import Todo from "../modules/TodoApp";
 import JX from "../modules/JX";
 import $ from "jquery";
 
-const Share = () => {
+const Search = () => {
 return (
 	<div>
 		<Todo />
@@ -16,4 +16,4 @@ return (
 );
 }
 
-export default Share;
+export default Search;

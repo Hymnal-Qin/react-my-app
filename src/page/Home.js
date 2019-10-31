@@ -1,19 +1,24 @@
-import React, { Suspense, lazy, Component } from "react";
-import Game from "../modules/Game";
-import Clock from "../modules/Clock";
-import Button from "../components/button/Button";
+import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 
-import Select from "../components/input/Select";
-import File from "../components/input/File";
-import Textarea from "../components/input/Textarea";
-import Tile from "../components/image/Tile";
-import { level1 } from "../components/values/shadows";
-import GridCell from "../components/grid/GridCell";
-import Grid from "../components/grid/Grid";
-import home from "../settings/routes/home";
+// UI
+import { Button } from "../components/button";
+import { Select, File } from "../components/input";
+import { Textarea } from "../components/input";
+import { Tile as ImageTile } from "../components/image";
+import { Grid, GridCell } from "../components/grid";
+import { IconImage } from "../components/icon";
 
-const IconImage = lazy(() => import("../components/icon/IconImage"));
+// UI values
+import { level1 } from "../components/values/shadows";
+
+// module
+import { APP_URL } from "../settings/config/env";
+// route
+import { routes } from "../settings/routes";
+
+const loginPath = () => routes.login.path;
+const searchPath = () => routes.search.path;
 
 class Home extends Component {
 	constructor(props) {
@@ -26,76 +31,67 @@ class Home extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		console.log("跳转登录");
-		const username = "qxj"; //e.target.elements[0].value;
-		const path = home.login.path;
-		this.props.history.push(path);
+		//const username = "qxj"; //e.target.elements[0].value;
+		this.props.history.push(loginPath());
 	}
 
 	render() {
 		return (
-			<Suspense fallback={<div>Loading</div>}>
-				<Grid gutter={true} alignCenter={true} style={{ padding: "2em" }}>
-					<Helmet>
-						<title>Home</title>
-					</Helmet>
-					<GridCell>
-						<IconImage
-							url={"../../public/image/favicon/favicon.ico"}
-							path={`share/`}
-						/>
-						<Button
-							type='button'
-							theme='primary'
-							disabled={false}
-							onClick={() => this.props.history.push(home.login.path)}>
-							{this.state.login}
-						</Button>
-						<Select fullWidth={true}>
-							<option value='1'>1</option>
-							<option value='2'>2</option>
-							<option value='3'>3</option>
-							<option value='4'>4</option>
-						</Select>
-						<File></File>
-						<Textarea fullWidth={true}></Textarea>
-					</GridCell>
-
-					<GridCell>
-						<Clock />
-					</GridCell>
-
+			<Grid gutter={true} alignCenter={true} style={{ padding: "2em" }}>
+				<Helmet>
+					<title>Home</title>
+				</Helmet>
+				<GridCell>
 					<Grid gutter={true} alignCenter={true}>
 						<GridCell justifyCenter={true}>
-							<Tile
+							<ImageTile
 								width={300}
 								height={530}
 								shadow={level1}
-								image={"./image/stock/women/1.jpg"}></Tile>
+								image={`${APP_URL}/images/stock/women/1.jpg`}></ImageTile>
 						</GridCell>
 						<GridCell>
 							<Grid>
 								<GridCell justifyCenter={true}>
-									<Tile
+									<ImageTile
 										width={170}
 										height={250}
 										shadow={level1}
-										image={"./image/stock/women/1.jpg"}></Tile>
+										image={`${APP_URL}/images/stock/women/2.jpg`}></ImageTile>
 								</GridCell>
 							</Grid>
 							<Grid>
 								<GridCell justifyCenter={true}>
-									<Tile
+									<ImageTile
 										width={170}
 										height={250}
 										shadow={level1}
 										style={{ marginTop: "1.9em" }}
-										image={"./image/stock/women/1.jpg"}></Tile>
+										image={`${APP_URL}/images/stock/women/3.jpg`}></ImageTile>
 								</GridCell>
 							</Grid>
 						</GridCell>
 					</Grid>
-				</Grid>
-			</Suspense>
+				</GridCell>
+				<GridCell>
+					<IconImage path={searchPath()} />
+					<Button
+						type='button'
+						theme='primary'
+						disabled={false}
+						onClick={() => this.props.history.push(loginPath())}>
+						{this.state.login}
+					</Button>
+					<Select fullWidth={true}>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+					</Select>
+					<File></File>
+					<Textarea fullWidth={true}></Textarea>
+				</GridCell>
+			</Grid>
 		);
 	}
 }

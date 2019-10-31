@@ -1,5 +1,7 @@
-var webpack = require("webpack");
-module.exports = {
+// Imports
+import path from 'path'
+import Dotenv from 'dotenv-webpack'
+const config = {
 	entry: "./src/index.js",
 	output: {
 		path: __dirname + "/build",
@@ -28,5 +30,10 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new Dotenv()
+	]
 };
+
+export default config;

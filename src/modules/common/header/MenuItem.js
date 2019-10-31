@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+// UI values
 import { white } from "../../../components/values/colors";
 import { primary, secondary } from "../../../components/values/gradients";
 import { level1 } from "../../../components/values/shadows";
