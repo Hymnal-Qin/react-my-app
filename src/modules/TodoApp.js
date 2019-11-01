@@ -28,12 +28,12 @@ class TodoApp extends Component {
 		);
 	}
 
-	handleChange = e => {
-		this.setState({ text: e.target.value });
+	handleChange = event => {
+		this.setState({ text: event.target.value });
 	};
 
-	handleSubmit = e => {
-		e.preventDefault();
+	handleSubmit = event => {
+		event.preventDefault();
 		if (!this.state.text.length) {
 			return;
 		}

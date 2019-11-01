@@ -1,25 +1,18 @@
 // Imports
-import path from 'path'
-import Dotenv from 'dotenv-webpack'
-const config = {
+const Dotenv = require("dotenv-webpack");
+const path = require("path");
+module.exports = {
 	entry: "./src/index.js",
 	output: {
-		path: __dirname + "/build",
-		filename: "index.js"
-	},
-	devServer: {
-		inline: true,
-		port: 8082
+		path: path.resolve(__dirname, "dist"),
+		filename: "[name].[hash:8].js"
 	},
 	module: {
 		rules: [
 			{
 				test: /\.js?$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
-				query: {
-					presets: ["@babel/preset-react", "@babel/preset-env"]
-				}
+				loader: "babel-loader"
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
@@ -31,9 +24,8 @@ const config = {
 			}
 		]
 	},
-	plugins: [
-		new Dotenv()
-	]
+	plugins: [new Dotenv()],
+	node: {
+		fs: "empty"
+	}
 };
-
-export default config;
