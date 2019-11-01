@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 // App state
 import common from './common/api/state'
 import user from './user/api/state'
+import logger from "redux-logger";
 
 // App Reducer 合并状态
 const appReducer = combineReducers({
@@ -24,6 +25,6 @@ export const store = createStore(
     rootReducer,
 
     compose(
-        applyMiddleware(thunk)
+        applyMiddleware(thunk, logger)
     )
 )
