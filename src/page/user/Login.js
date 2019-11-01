@@ -8,7 +8,7 @@ import {level1} from "../../components/values/shadows";
 
 // Module
 import SignIn from "../../modules/user/SignIn";
-import {APP_URL} from "../../settings/config/env";
+import {routeLocal} from "../../settings/routes";
 
 class Login extends Component {
     constructor(props) {
@@ -47,7 +47,7 @@ class Login extends Component {
                                 width={300}
                                 height={530}
                                 shadow={level1}
-                                image={`${APP_URL}/images/stock/women/1.jpg`}/>
+                                image={`${routeLocal}/images/stock/women/1.jpg`}/>
                         </GridCell>
                         <GridCell>
                             <Grid>
@@ -56,7 +56,7 @@ class Login extends Component {
                                         width={170}
                                         height={250}
                                         shadow={level1}
-                                        image={`${APP_URL}/images/stock/women/2.jpg`}/>
+                                        image={`${routeLocal}/images/stock/women/2.jpg`}/>
                                 </GridCell>
                             </Grid>
                             <Grid>
@@ -66,7 +66,7 @@ class Login extends Component {
                                         height={250}
                                         shadow={level1}
                                         style={{marginTop: "1.9em"}}
-                                        image={`${APP_URL}/images/stock/women/3.jpg`}/>
+                                        image={`${routeLocal}/images/stock/women/3.jpg`}/>
                                 </GridCell>
                             </Grid>
                         </GridCell>
@@ -74,7 +74,7 @@ class Login extends Component {
                 </GridCell>
 
                 <GridCell justifyCenter={true} style={{textAlign: "center"}}>
-                    <SignIn></SignIn>
+                    <SignIn/>
                 </GridCell>
             </Grid>
         );

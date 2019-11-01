@@ -3,19 +3,17 @@ import ReactDOM from "react-dom";
 import App from "./App";
 // css
 import GlobalStyle from "./css/Global.style";
-import {APP_URL, NODE_ENV} from "./settings/config/env";
+import {Provider} from "react-redux";
+import {store} from "./modules/store";
 
 // ========================================
 const Index = () => {
-
-    // require("dotenv").config();
-    console.log(`host:${APP_URL} model: ${NODE_ENV}`);
     return (
-        <div>
+        <Provider store={store} key="provider">
             {/* Global style */}
             <GlobalStyle/>
             <App/>
-        </div>
+        </Provider>
     );
 };
 ReactDOM.render(<Index/>, document.getElementById("root"));

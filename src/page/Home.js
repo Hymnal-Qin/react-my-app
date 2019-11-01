@@ -13,9 +13,8 @@ import {IconImage} from "../components/icon";
 import {level1} from "../components/values/shadows";
 
 // module
-import {APP_URL} from "../settings/config/env";
 // route
-import {routes} from "../settings/routes";
+import {routeLocal, routes} from "../settings/routes";
 
 const loginPath = () => routes.login.path;
 const searchPath = () => routes.search.path;
@@ -48,7 +47,7 @@ class Home extends Component {
                                 width={300}
                                 height={530}
                                 shadow={level1}
-                                image={`${APP_URL}/images/stock/women/1.jpg`}/>
+                                image={`${routeLocal}/images/stock/women/1.jpg`}/>
                         </GridCell>
                         <GridCell>
                             <Grid>
@@ -57,7 +56,7 @@ class Home extends Component {
                                         width={170}
                                         height={250}
                                         shadow={level1}
-                                        image={`${APP_URL}/images/stock/women/2.jpg`}/>
+                                        image={`${routeLocal}/images/stock/women/2.jpg`}/>
                                 </GridCell>
                             </Grid>
                             <Grid>
@@ -67,7 +66,7 @@ class Home extends Component {
                                         height={250}
                                         shadow={level1}
                                         style={{marginTop: "1.9em"}}
-                                        image={`${APP_URL}/images/stock/women/3.jpg`}/>
+                                        image={`${routeLocal}/images/stock/women/3.jpg`}/>
                                 </GridCell>
                             </Grid>
                         </GridCell>

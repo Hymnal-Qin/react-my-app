@@ -5,9 +5,9 @@ services:
     # 镜像:版本
     image: nginx:latest 
     container_name: my_nginx
-    # 映射容器80端口到本地80端口
+    # 映射 -容器80端口- 到 -本地80端口-
     ports:
-     - "3000:8002"
+     - "8002:8002"
     # 数据卷 映射本地文件到容器
     volumes:
     # 映射nginx.conf文件到容器的/etc/nginx/conf.d目录并覆盖default.conf文件

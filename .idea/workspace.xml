@@ -2,53 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e77dfbb-7f5b-4ec0-90fa-000aae944f50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/modules/Todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/redux_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/redux_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/常用命令.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/user/api/state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/colors.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/colors.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/grid/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/grid/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/grid/GridCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/grid/GridCell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/Icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/IconImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/IconImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/image/Tile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/Tile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/image/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/File.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Textarea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Textarea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/typography/H3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/H3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/typography/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/values/gradients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/values/gradients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/values/shadows.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/values/shadows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/docker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Global.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Clock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/JX.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/JX.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/TodoApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/common/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/common/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/ScrollToTop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/common/api/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/api/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/common/api/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/api/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/common/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/common/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/common/header/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/common/header/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/common/header/MenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/MenuItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/user/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/user/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/user/api/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/user/api/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/admin/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/admin/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/product/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/product/Detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/user/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/user/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/user/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/user/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/routes/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +35,13 @@
   <component name="FavoritesManager">
     <favorites_list name="my-app" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -68,13 +51,17 @@
   <component name="ProjectId" id="1SzfjbLnxk3vYqXoMsEJ0HTRxNP" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/build/service-worker.js&#10;/home/qin/VSCodeProjects/my-app/build/css/reset.css&#10;true&#10;/home/qin/VSCodeProjects/my-app/build/robots.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crate/code/web" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,7 +75,38 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nginx" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -101,9 +119,23 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.nginx: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -119,8 +151,22 @@
       <workItem from="1572571646722" duration="469000" />
       <workItem from="1572572126641" duration="442000" />
       <workItem from="1572572594418" duration="175000" />
-      <workItem from="1572572782047" duration="2946000" />
+      <workItem from="1572572782047" duration="3516000" />
+      <workItem from="1572576311461" duration="122000" />
+      <workItem from="1572576446460" duration="260000" />
+      <workItem from="1572577236330" duration="273000" />
+      <workItem from="1572577525529" duration="113000" />
+      <workItem from="1572577650632" duration="6336000" />
+      <workItem from="1572589836263" duration="6834000" />
     </task>
+    <task id="LOCAL-00001" summary="change style">
+      <created>1572575838264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572575838264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

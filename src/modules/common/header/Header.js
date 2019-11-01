@@ -1,21 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-
 // UI
 import {primary} from "../../../components/values/gradients";
 import {level1} from "../../../components/values/shadows";
 import {Grid, GridCell} from "../../../components/grid";
-
 // Module
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 import Logo from "./Logo";
-
 // route
 import {routes} from "../../../settings/routes";
 
 const loginPath = () => routes.login.path;
+const search = () => routes.search.path;
 
 const Header = props => {
     const Header = styled.header`
@@ -38,13 +36,13 @@ const Header = props => {
                     {/* Left Menu */}
                     <Menu
                         style={{float: "left", marginTop: "0.5em", marginLeft: "2em"}}>
-                        <MenuItem>Men</MenuItem>
+                        <MenuItem to={search()}>Men</MenuItem>
 
-                        <MenuItem>Women</MenuItem>
+                        <MenuItem to={search()}>Women</MenuItem>
 
-                        <MenuItem>How It Works</MenuItem>
+                        <MenuItem to={search()}>How It Works</MenuItem>
 
-                        <MenuItem>What's New</MenuItem>
+                        <MenuItem to={search()}>What's New</MenuItem>
                     </Menu>
                 </GridCell>
 
@@ -53,7 +51,7 @@ const Header = props => {
                     <Menu>
                         <MenuItem to={loginPath()}>SignIn</MenuItem>
 
-                        <MenuItem>SignUp</MenuItem>
+                        <MenuItem to={search()}>SignUp</MenuItem>
                     </Menu>
                 </GridCell>
             </Grid>
