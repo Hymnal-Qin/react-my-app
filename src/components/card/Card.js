@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { level1 } from "../values/shadows";
+import {level1} from "../values/shadows";
 
 const Card = styled.div`
-	border-radius: 0.2em;
-	font-family: "Roboto", sans-serif;
-	box-shadow: ${level1};
+  border-radius: 0.2em;
+  font-family: "Roboto", sans-serif;
+  box-shadow: ${level1};
 `;
 
 // const Card = props => {

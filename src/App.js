@@ -21,7 +21,10 @@ const App = () => {
                             key={index}
                             path={
                                 typeof route.path === "function" ? route.path() : route.path
-                            }></Route>
+                            }
+                        >
+
+                        </Route>
                     ))}
                 </Switch>
             </Layout>

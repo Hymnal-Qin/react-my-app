@@ -2,18 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+const Div = styled.div`
+  background-image: url(${props => props.image});
+  background-size: 100% auto;
+  box-shadow: ${props => props.shadow ? props.shadow : "none"};
+`;
+
 const Tile = props => {
-	const { children, image, width, height, style, shadow, ...others } = props;
-	const Div = styled.div`
-		background-image: url(${image});
-		background-size: 100% auto;
-		box-shadow: ${shadow ? shadow : "none"};
-	`;
-	return (
-		<Div style={Object.assign({ height, width }, style)} {...others}>
-			{children}
-		</Div>
-	);
+    const {children, image, width, height, style, shadow, ...others} = props;
+
+    return (
+        <Div style={Object.assign({height, width}, style)} image={image} shadow={shadow} {...others}>
+            {children}
+        </Div>
+    );
 };
 
 // const Tile = props => {
@@ -36,16 +38,16 @@ const Tile = props => {
 // };
 
 Tile.propTypes = {
-	image: PropTypes.string.isRequired,
-	style: PropTypes.object,
-	width: PropTypes.number,
-	height: PropTypes.number,
-	shadow: PropTypes.string
+    image: PropTypes.string.isRequired,
+    style: PropTypes.object,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    shadow: PropTypes.string
 };
 
 Tile.defaultProps = {
-	style: {},
-	width: "100%",
-	height: "100%"
+    style: {},
+    width: "100%",
+    height: "100%"
 };
 export default Tile;

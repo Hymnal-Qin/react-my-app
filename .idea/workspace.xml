@@ -2,27 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e77dfbb-7f5b-4ec0-90fa-000aae944f50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/docker.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Todo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HISTORY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog-template.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/TodoApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/TodoApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/config/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/colors.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/colors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/grid/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/grid/Grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/grid/GridCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/grid/GridCell.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/Icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/IconImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/IconImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/image/Tile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/Tile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/image/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/image/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/File.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input/Select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input/Textarea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Textarea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/H3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/H3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/values/gradients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/values/gradients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/values/shadows.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/values/shadows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Global.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Global.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Clock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/JX.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/JX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/TodoApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/ScrollToTop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/api/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/api/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/api/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/api/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/header/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Logo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/header/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/common/header/MenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/common/header/MenuItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/user/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/user/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/user/api/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/user/api/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/admin/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/admin/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/product/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/product/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/user/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/user/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/user/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/user/Register.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +62,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="6216feb2-e543-48d6-b060-52c63e2ea791" />
+  </component>
   <component name="ProjectId" id="1SzfjbLnxk3vYqXoMsEJ0HTRxNP" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -45,7 +74,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -90,7 +119,7 @@
       <workItem from="1572571646722" duration="469000" />
       <workItem from="1572572126641" duration="442000" />
       <workItem from="1572572594418" duration="175000" />
-      <workItem from="1572572782047" duration="118000" />
+      <workItem from="1572572782047" duration="2946000" />
     </task>
     <servers />
   </component>
@@ -109,5 +138,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change style" />
+    <option name="LAST_COMMIT_MESSAGE" value="change style" />
   </component>
 </project>

@@ -4,56 +4,56 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Div = styled.div`
-	display: flex;
-	flex-flow: row;
-	flex-wrap: wrap;
-	${props => (props.justifyRight ? "justify-content: flex-end" : "")};
-	${props => (props.justifyCenter ? "justify-content: center" : "")};
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  ${props => (props.justifyRight ? "justify-content: flex-end" : "")};
+  ${props => (props.justifyCenter ? "justify-content: center" : "")};
 
-	${props => (props.alignTop ? "align-items: flex-start" : "")};
-	${props => (props.alignBottom ? "align-items: flex-end" : "")};
-	${props => (props.alignCenter ? "align-items: center" : "")};
+  ${props => (props.alignTop ? "align-items: flex-start" : "")};
+  ${props => (props.alignBottom ? "align-items: flex-end" : "")};
+  ${props => (props.alignCenter ? "align-items: center" : "")};
 
-	${props => (props.gutter ? "margin-left: -1em" : "margin-left: 0")};
+  ${props => (props.gutter ? "margin-left: -1em" : "margin-left: 0")};
 `;
 // Component
 const Grid = props => {
-	const {
-		children,
+    const {
+        children,
 
-		justifyRight,
-		justifyCenter,
+        justifyRight,
+        justifyCenter,
 
-		alignTop,
-		alignBottom,
-		alignCenter,
+        alignTop,
+        alignBottom,
+        alignCenter,
 
-		gutter,
-		...others
-	} = props;
+        gutter,
+        ...others
+    } = props;
 
-	const GridCells = React.Children.map(children, GridCell => {
-		if (!GridCell) {
-			return null;
-		}
-		if (GridCell.props) {
-			return React.cloneElement(GridCell, { gutter });
-		}
-		return GridCell;
-	});
+    const GridCells = React.Children.map(children, GridCell => {
+        if (!GridCell) {
+            return null;
+        }
+        if (GridCell.props) {
+            return React.cloneElement(GridCell, {gutter});
+        }
+        return GridCell;
+    });
 
-	return (
-		<Div
-			justifyRight={justifyRight}
-			justifyCenter={justifyCenter}
-			alignTop={alignTop}
-			alignBottom={alignBottom}
-			alignCenter={alignCenter}
-			gutter={gutter}
-			{...others}>
-			{GridCells}
+    return (
+        <Div
+            justifyRight={justifyRight}
+            justifyCenter={justifyCenter}
+            alignTop={alignTop}
+            alignBottom={alignBottom}
+            alignCenter={alignCenter}
+            gutter={gutter}
+            {...others}>
+            {GridCells}
 
-			{/* language=CSS
+            {/* language=CSS
 			<style jsx>{`
         div {
           display: flex;
@@ -70,31 +70,31 @@ const Grid = props => {
           ${gutter ? "margin-left: -1em;" : "margin-left: 0;"}
         }
       `}</style> */}
-		</Div>
-	);
+        </Div>
+    );
 };
 
 // Component Properties
 Grid.propTypes = {
-	justifyRight: PropTypes.bool,
-	justifyCenter: PropTypes.bool,
+    justifyRight: PropTypes.bool,
+    justifyCenter: PropTypes.bool,
 
-	alignTop: PropTypes.bool,
-	alignBottom: PropTypes.bool,
-	alignCenter: PropTypes.bool,
+    alignTop: PropTypes.bool,
+    alignBottom: PropTypes.bool,
+    alignCenter: PropTypes.bool,
 
-	gutter: PropTypes.bool
+    gutter: PropTypes.bool
 };
 
 Grid.defaultProps = {
-	justifyRight: false,
-	justifyCenter: false,
+    justifyRight: false,
+    justifyCenter: false,
 
-	alignTop: false,
-	alignBottom: false,
-	alignCenter: false,
+    alignTop: false,
+    alignBottom: false,
+    alignCenter: false,
 
-	gutter: false
+    gutter: false
 };
 
 export default Grid;

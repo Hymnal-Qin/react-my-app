@@ -1,11 +1,9 @@
 // Global
-import { createGlobalStyle } from "styled-components";
+import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 import BodyBg from "../assets/img/bg.texture.png";
 // ${reset}
-const GlobalStyle = createGlobalStyle`
-
-// *{
+const GlobalStyle = createGlobalStyle`// *{
 //     box-sizing:border-box;
 //     user-select:none;
 //     outline:none;
@@ -22,22 +20,19 @@ const GlobalStyle = createGlobalStyle`
 // }
 
 body {
-	//font: 14px "Century Gothic", Futura, sans-serif;
-	//margin:0 auto;
-	// background-image: url(${BodyBg});
+  //font: 14px "Century Gothic", Futura, sans-serif;
+  //margin:0 auto;
+  // background-image: url(${BodyBg});
   //transition:background-color 1.6s;
 }
 
 footer {
-	padding-top: 16px !important;
-	padding-bottom: 16px !important;
-  padding-left: 16px !important;
-	padding-right: 16px !important;
+  padding: 16px !important;
   max-width: 1012px !important;
   margin-right: auto;
-	margin-left: auto;
-	color: #586069 !important;
-	font: 14px "Century Gothic", Futura, sans-serif;
+  margin-left: auto;
+  color: #586069 !important;
+  font: 14px "Century Gothic", Futura, sans-serif;
 }
 
 // ol,
