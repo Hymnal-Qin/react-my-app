@@ -21,8 +21,17 @@ module.exports = {
 					name: "[name].[ext]",
 					outputPath: "images/"
 				}
+			},
+			{
+				test: /\.tsx?$/,
+				use: ['babel-loader', 'ts-loader'],
+				exclude: /node_modules/,
 			}
-		]
+		],
+		resolve: {
+			// 一定不要忘记配置ts tsx后缀
+			extensions: ['.tsx', '.ts', '.js'],
+		}
 	},
 	plugins: [new Dotenv()],
 	node: {
