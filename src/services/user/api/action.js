@@ -1,6 +1,6 @@
 import axios from "axios";
 import {query} from "gql-query-builder";
-import {routeApi} from "../../../settings/routes";
+import {routeApi} from "../../../routes";
 
 // Actions Types
 // 注册事件

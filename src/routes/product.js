@@ -1,4 +1,4 @@
-import Detail from "../../page/product/Detail";
+import Detail from "../pages/product/Detail";
 
 export default {
 	product: {

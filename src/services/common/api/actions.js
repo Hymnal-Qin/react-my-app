@@ -1,5 +1,5 @@
 import axios from "axios/index";
-import {routeApi} from "../../../settings/routes";
+import {routeApi} from "../../../routes";
 
 // 公共事件
 export const MESSAGE_SHOW = "COMMON_MESSAGE_SHOW";

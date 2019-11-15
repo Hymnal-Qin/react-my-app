@@ -1,5 +1,5 @@
 import params from "../../config/params";
-import Product from "../../../page/admin/Product";
+import Product from "../../pages/admin/Product";
 
 // 管理员输入商品
 export const productEdit = {

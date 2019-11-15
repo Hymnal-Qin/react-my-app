@@ -1,5 +1,5 @@
 import {LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, SET_USER} from "./action";
-import {isEmpty} from "../../helpers";
+import {isEmpty} from "../../../modules/helpers";
 
 // Initial State
 // 初始化用户状态

@@ -10,7 +10,7 @@ import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 import Logo from "./Logo";
 // route
-import {routes} from "../../../settings/routes";
+import {routes} from "../../../routes";
 
 const loginPath = () => routes.login.path;
 const search = () => routes.search.path;

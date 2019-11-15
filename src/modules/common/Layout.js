@@ -10,7 +10,7 @@ import {Icon} from "../../components/icon";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import {connect} from "react-redux";
-import {messageHide} from "./api/actions";
+import {messageHide} from "../../services/common/api/actions";
 
 class Layout extends PureComponent {
     render() {

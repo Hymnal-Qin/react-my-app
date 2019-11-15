@@ -1,4 +1,4 @@
-import Search from "../../page/Search";
+import Search from "../pages/Search";
 
 export default {
 	search: {

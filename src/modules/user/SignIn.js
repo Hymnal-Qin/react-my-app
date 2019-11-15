@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import {messageShow, messageHide} from "../common/api/actions";
+import {messageShow, messageHide} from "../../services/common/api/actions";
 
 // UI
 import Input from "../../components/input/Input";
@@ -13,7 +13,7 @@ import {white} from "../../components/values/colors";
 import H3 from "../../components/typography/H3";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {login} from "./api/action";
+import {login} from "../../services/user/api/action";
 
 class Login extends Component {
     constructor(props) {

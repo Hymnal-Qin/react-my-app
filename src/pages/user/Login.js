@@ -2,44 +2,44 @@ import React, {Component} from "react";
 import {Helmet} from "react-helmet";
 
 // UI
-import {Button} from "../components/button";
-import {Select, File} from "../components/input";
-import {Textarea} from "../components/input";
-import {Tile as ImageTile} from "../components/image";
-import {Grid, GridCell} from "../components/grid";
-import {IconImage} from "../components/icon";
+import {Grid, GridCell} from "../../components/grid";
+import {Tile as ImageTile} from "../../components/image";
+import {level1} from "../../components/values/shadows";
 
-// UI values
-import {level1} from "../components/values/shadows";
+// Module
+import SignIn from "../../modules/user/SignIn";
+import {routeLocal} from "../../routes";
 
-// module
-// route
-import {routeLocal, routes} from "../settings/routes";
-
-const loginPath = () => routes.login.path;
-const searchPath = () => routes.search.path;
-
-class Home extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            login: "Sign In 登录"
+            name: this.props.name,
+            password: "",
+            error: null
         };
     }
 
-    handleSubmit(e) {
+    handleChange = e => {
         e.preventDefault();
-        console.log("跳转登录");
-        //const username = "qxj"; //e.target.elements[0].value;
-        this.props.history.push(loginPath());
-    }
+        const label = e.target.id;
+        const value = e.target.value;
+        console.log(label);
+        console.log(value);
+        this.setState({
+            error: value
+        });
+    };
 
     render() {
         return (
             <Grid gutter={true} alignCenter={true} style={{padding: "2em"}}>
+                {/* SEO */}
                 <Helmet>
-                    <title>Home</title>
+                    <title>Login to your account</title>
                 </Helmet>
+
+                {/* Left Content - Image Collage */}
                 <GridCell>
                     <Grid gutter={true} alignCenter={true}>
                         <GridCell justifyCenter={true}>
@@ -72,31 +72,13 @@ class Home extends Component {
                         </GridCell>
                     </Grid>
                 </GridCell>
-                <GridCell>
-                    <IconImage path={searchPath()}/>
-                    <Button
-                        type='button'
-                        theme='primary'
-                        disabled={false}
-                        onClick={() => this.props.history.push(loginPath())}>
-                        {this.state.login}
-                    </Button>
-                    <Select fullWidth={true}>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                    </Select>
-                    <File/>
-                    <Textarea fullWidth={true}/>
+
+                <GridCell justifyCenter={true} style={{textAlign: "center"}}>
+                    <SignIn/>
                 </GridCell>
             </Grid>
         );
     }
 }
 
-// function Index() {
-//   return (<div></div>);
-// }
-
-export default Home;
+export default Login;

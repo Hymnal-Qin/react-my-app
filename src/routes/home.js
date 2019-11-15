@@ -1,4 +1,4 @@
-import Home from "../../page/Home";
+import Home from "../pages/home/Home";
 // 注册路由
 export default {
 	home: {
