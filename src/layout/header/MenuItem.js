@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Link, withRouter} from "react-router-dom";
 // UI values
-import {white} from "../../../components/values/colors";
-import {primary, secondary} from "../../../components/values/gradients";
-import {level1} from "../../../components/values/shadows";
+import {white} from "../../components/values/colors";
+import {primary, secondary} from "../../components/values/gradients";
+import {level1} from "../../components/values/shadows";
 
 const MenuItem = props => {
     const {children, to, type, active, style, section} = props;

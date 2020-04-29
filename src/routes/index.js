@@ -2,7 +2,7 @@ import home from "./home";
 import other from "./other";
 import admin from "./admin";
 import user from "./user";
-import {APP_URL, APP_URL_API} from "../config/env";
+import {APP_URL, APP_URL_API} from "@/config/env";
 
 // Combined routes
 export const routes = Object.assign(home, user, other, admin);

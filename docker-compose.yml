@@ -8,6 +8,7 @@ services:
     # 映射 -容器80端口- 到 -本地80端口-
     ports:
      - "8002:8002"
+    restart:
     # 数据卷 映射本地文件到容器
     volumes:
     # 映射nginx.conf文件到容器的/etc/nginx/conf.d目录并覆盖default.conf文件

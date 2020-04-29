@@ -3,7 +3,7 @@ import {BrowserRouter as Router, HashRouter, Route, Switch} from "react-router-d
 import {createBrowserHistory} from "history";
 import {routes} from "./routes";
 
-import Layout from "./modules/common/Layout";
+import Layout from "./layout/Layout";
 
 const history = createBrowserHistory();
 

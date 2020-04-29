@@ -1,10 +1,10 @@
 import React from "react";
 
 // UI
-import {Grid, GridCell} from "../../../components/grid";
+import {Grid, GridCell} from "../../components/grid";
 
 // Module
-import Clock from "../../Clock";
+import Clock from "../../modules/Clock";
 
 const Footer = props => {
     return (

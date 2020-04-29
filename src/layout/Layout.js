@@ -1,16 +1,16 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-import {renderIf} from "../helpers";
+import {renderIf} from "../modules/helpers";
 // UI
-import {level2} from "../../components/values/shadows";
-import {black, white} from "../../components/values/colors";
-import {Icon} from "../../components/icon";
+import {level2} from "../components/values/shadows";
+import {black, white} from "../components/values/colors";
+import {Icon} from "../components/icon";
 // Module
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import {connect} from "react-redux";
-import {messageHide} from "../../services/common/api/actions";
+import {messageHide} from "../services/common/api/actions";
 
 class Layout extends PureComponent {
     render() {

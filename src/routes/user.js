@@ -1,5 +1,5 @@
 import Login from "../pages/user/Login";
-import Detail from "../ts/Detail";
+import Detail from "../pages/user/Detail";
 
 export default  {
   login: {

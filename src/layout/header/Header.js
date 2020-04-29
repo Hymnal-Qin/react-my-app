@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 // UI
-import {primary} from "../../../components/values/gradients";
-import {level1} from "../../../components/values/shadows";
-import {Grid, GridCell} from "../../../components/grid";
+import {primary} from "../../components/values/gradients";
+import {level1} from "../../components/values/shadows";
+import {Grid, GridCell} from "../../components/grid";
 // Module
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 import Logo from "./Logo";
 // route
-import {routes} from "../../../routes";
+import {routes} from "../../routes";
 
 const loginPath = () => routes.login.path;
 const search = () => routes.search.path;
