@@ -1,68 +1,81 @@
 /* Global */
 html, body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+body {
+    /*overflow-y: scroll !important;*/
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* Table */
 table, th, td {
-  border: none;
+    border: none;
 }
 
 table {
-  width: 100%;
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 0;
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 table.bordered > thead > tr,
 table.bordered > tbody > tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 table.striped tr {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 table.striped > tbody > tr:nth-child(odd) {
-  background-color: rgba(242, 242, 242, 0.5);
+    background-color: rgba(242, 242, 242, 0.5);
 }
 
 table.striped > tbody > tr > td {
-  border-radius: 0;
+    border-radius: 0;
 }
 
 table.highlight > tbody > tr {
-  -webkit-transition: background-color .25s ease;
-  transition: background-color .25s ease;
+    -webkit-transition: background-color .25s ease;
+    transition: background-color .25s ease;
 }
 
 table.highlight > tbody > tr:hover {
-  background-color: rgba(242, 242, 242, 0.5);
+    background-color: rgba(242, 242, 242, 0.5);
 }
 
 table.centered thead tr th, table.centered tbody tr td {
-  text-align: center;
+    text-align: center;
 }
 
 tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 td, th {
-  padding: 15px 5px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 2px;
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
 }
 
 th {
-  font-weight: bold;
-  border-bottom: 1px solid #dddddd;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 去掉虚线框 */
+input, button, a {
+    outline: none !important;
+    blr: expression(this.onFocus=this.blur());
+}
+
+::-moz-focus-inner {
+    border: 0;
 }

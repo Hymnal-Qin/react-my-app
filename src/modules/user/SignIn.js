@@ -1,122 +1,105 @@
-import React, {Component} from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import {messageShow, messageHide} from "../../services/common/api/actions";
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { login } from '@/store/user/actions';
+import userRoutes from '@/routes/user';
 
 // UI
-import Input from "../../components/input/Input";
-import Button from "../../components/button/Button";
-import Icon from "../../components/icon/Icon";
-import Grid from "../../components/grid/Grid";
-import GridCell from "../../components/grid/GridCell";
-import {white} from "../../components/values/colors";
-import H3 from "../../components/typography/H3";
-import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
-import {login} from "../../services/user/api/action";
+import Input from '@/components/input/Input';
+import Button from '@/components/button/Button';
+import Icon from '@/components/icon/Icon';
+import Grid from '@/components/grid/Grid';
+import GridCell from '@/components/grid/GridCell';
+import { white } from '@/components/values/colors';
+import H3 from '@/components/typography/H3';
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {
-                email: "",
-                password: ""
-            }
-        };
-    }
-
-    handleChange = e => {
-        let user = this.state.user;
-        user[e.target.name] = e.target.value;
-        this.setState({
-            user
-        });
+class SignIn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        username: '18339989537',
+        password: '123456',
+      },
     };
+  }
 
-    onSubmit = e => {
-        e.preventDefault();
-        this.props.messageShow("Logging in, please wait...");
-        this.props
-            .login(this.state.user)//action 中的 login 函数
-            .then(response => {
-                if (this.props.user.error && this.props.user.error.length > 0) {
-                    this.props.messageShow(this.props.user.error);
+  handleChange = (e) => {
+    const { user } = this.state;
+    user[e.target.name] = e.target.value;
+    this.setState({
+      user,
+    });
+  };
 
-                    //超时
-                    window.setTimeout(() => {
-                        this.props.messageHide();
-                    }, 5000);
-                } else {
-                    this.props.messageHide();
-                }
-            })
-            .catch(error => {
-                this.props.messageShow(this.props.user.error);
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.login(this.state.user); // action 中的 login 函数
+  };
 
-                window.setTimeout(() => {
-                    this.props.messageHide();
-                }, 5000);
-            });
-    };
+  render() {
+    const { isLoading, error } = this.props.user;
+    return (
+      <Grid gutter alignCenter style={{ padding: '2em' }}>
+        <GridCell gutter style={{ textAlign: 'center' }}>
+          <H3 font="secondary" style={{ marginBottom: '1em' }}>
+            Login to your account
+          </H3>
 
-    render() {
-        const {isLoading, error} = this.props.user;
-        return (
-            <Grid gutter={true} alignCenter={true} style={{padding: "2em"}}>
-                <GridCell style={{textAlign: "center"}}>
-                    <H3 font='secondary' style={{marginBottom: "1em"}}>
-                        Login to your account
-                    </H3>
+          {/* Login Form */}
+          <form onSubmit={this.onSubmit}>
+            <div style={{ width: '25em', margin: '0 auto' }}>
+              <Input
+                type="text"
+                fullWidth
+                placeholder="Username/Email"
+                required="required"
+                name="username"
+                autocomplete="username"
+                style={{ marginTop: '1em' }}
+                value={this.state.user.username}
+                onChange={this.handleChange}
+              />
+              <Input
+                type="password"
+                fullWidth
+                placeholder="Password"
+                required="required"
+                name="password"
+                autocomplete="current-password"
+                style={{ marginTop: '1em' }}
+                value={this.state.user.password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div style={{ marginTop: '2em' }}>
+              {/* Register link */}
+              <Link to={userRoutes.register.path}>
+                <Button type="button" style={{ marginRight: '0.5em' }}>
+                  Sign Up
+                </Button>
+              </Link>
 
-                    {/* Login Form */}
-                    <form onSubmit={this.onSubmit}>
-                        <div style={{width: "25em", margin: "0 auto"}}>
-                            <Input
-                                type='email'
-                                fullWidth={true}
-                                placeholder='Email'
-                                required='required'
-                                name='email'
-                                style={{marginTop: "1em"}}
-                                value={this.state.user.email}
-                                onChange={this.handleChange}
-                            />
-                            <Input
-                                type='password'
-                                fullWidth={true}
-                                placeholder='Password'
-                                required='required'
-                                name='password'
-                                style={{marginTop: "1em"}}
-                                value={this.state.user.password}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                        <div style={{marginTop: "2em"}}>
-                            <Button type='button' style={{marginRight: "0.5em"}}>
-                                Sign Up
-                            </Button>
-                            {/* Form submit 触发 submit 事件 */}
-                            <Button type='submit' theme='secondary' disabled={isLoading}>
-                                Sign In
-                                <Icon size={1.2} style={{color: white}}>
-                                    navigate_next
-                                </Icon>
-                            </Button>
-                        </div>
-                    </form>
-                </GridCell>
-            </Grid>
-        );
-    }
+              {/* Form submit 触发 submit 事件 */}
+              <Button type="submit" theme="secondary" disabled={isLoading}>
+                Sign In
+                <Icon size={1.2} style={{ color: white }}>
+                  navigate_next
+                </Icon>
+              </Button>
+            </div>
+          </form>
+        </GridCell>
+      </Grid>
+    );
+  }
 }
 
-Login.propTypes = {
-    user: PropTypes.object.isRequired,
-    login: PropTypes.func.isRequired,
-    messageShow: PropTypes.func.isRequired,
-    messageHide: PropTypes.func.isRequired
+SignIn.propTypes = {
+  user: PropTypes.object.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
 // redux 统一管理state 并映射到 props 不需要 defaultProps
@@ -135,16 +118,11 @@ Login.propTypes = {
 //         user: state.user
 //     };
 // }
-const loginState = (state) => {
-    return {
-        user: state.user
-    }
-}
+const loginState = (state) => ({
+  user: state.user,
+});
 // map state to props 将state中的某个数据映射到props中
 // mapDispatchToProps 把各种dispatch也变成了props让你可以直接使用
-//connect(mapStateToProps, mapDispatchToProps)(MyComponent)
+// connect(mapStateToProps, mapDispatchToProps)(MyComponent)
 
-export default connect(
-    loginState,
-    {login, messageShow, messageHide}
-)(withRouter(Login));
+export default connect(loginState, { login })(withRouter(SignIn));

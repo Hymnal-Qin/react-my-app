@@ -67,7 +67,14 @@ module.exports = {
         alias: {
             '@': path.resolve(__dirname, 'src'),
             '@assets': path.resolve(__dirname, 'src/assets'),
-            '@static': path.resolve(__dirname, 'static')
+            '@static': path.resolve(__dirname, 'static'),
+			'@modules': path.resolve(__dirname, 'src/modules'),
+			'@components': path.resolve(__dirname, 'src/components'),
+			'@layout': path.resolve(__dirname, 'src/layout'),
+			'@store': path.resolve(__dirname, 'src/store'),
+			'@routes': path.resolve(__dirname, 'src/routes'),
+			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@utils': path.resolve(__dirname, 'src/utils'),
         },
         // 一定不要忘记配置ts tsx后缀
         extensions: ['.tsx', '.ts', '.js', '.jsx', '.json', '.fs'],

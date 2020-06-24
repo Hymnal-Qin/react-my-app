@@ -1,9 +1,4 @@
-import {
-    primary as primaryColor,
-    primaryAccent,
-    secondary as secondaryColor,
-    secondaryAccent
-} from "./colors";
+import { primary as primaryColor, primaryAccent, secondary as secondaryColor, secondaryAccent } from './colors';
 
 // 渐变色 gradients value
 

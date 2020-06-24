@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
+//import dotenv from 'dotenv';
 // dotenv 从文件加载环境变量
-// Load .env
-dotenv.config();
-// require("dotenv").config();
+// Load .env.development
+//dotenv.config();
+require('dotenv').config();
 
 // URL
 export const APP_URL = process.env.REACT_APP_URL;
@@ -18,9 +18,9 @@ export const NODE_ENV = process.env.NODE_ENV;
 // Port
 export const PORT = process.env.PORT || 3000;
 
-// .env 配置文件读取
+// .env.development 配置文件读取
 /**
-配置IP和端口号
-APP_URL 当前client的IP和端口号
-APP_URL_API 接口server的IP和端口号
-**/
+ 配置IP和端口号
+ APP_URL 当前client的IP和端口号
+ APP_URL_API 接口server的IP和端口号
+ **/

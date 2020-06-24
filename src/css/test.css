@@ -1,13 +1,13 @@
 header {
-    background-image: none;
-    box-shadow: none;
-    position: fixed;
+	background-image: none;
+	box-shadow: none;
+	position: fixed;
 }
 
 footer {
 	max-width: 1012px !important;
-    margin-right: auto;
-    margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
 	padding: 16px !important;
 	color: #586069 !important;
 }

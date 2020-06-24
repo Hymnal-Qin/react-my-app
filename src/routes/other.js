@@ -1,8 +1,8 @@
-import Search from "../pages/Search";
+import Search from '../pages/Search';
 
 export default {
 	search: {
-		path: "/search",
-		component: Search
-	}
+		path: '/search',
+		component: Search,
+	},
 };

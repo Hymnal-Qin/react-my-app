@@ -1,88 +1,89 @@
-import React, {PureComponent} from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import {renderIf} from "../modules/helpers";
+import { connect } from 'react-redux';
+import { renderIf } from '../utils/helpers';
 // UI
-import {level2} from "../components/values/shadows";
-import {black, white} from "../components/values/colors";
-import {Icon} from "../components/icon";
+import { level2 } from '../components/values/shadows';
+import { black, white } from '../components/values/colors';
+import { Icon } from '../components/icon';
 // Module
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import {connect} from "react-redux";
-import {messageHide} from "../services/common/api/actions";
+import Header from './header/Header';
+import { messageHide } from '../store/common/actions';
 
-class Layout extends PureComponent {
-    render() {
-        return (
-            <div>
-                {/* 自定义头布局 */}
-                <Header/>
+const Layout = (props) =>
+  <section  style={{ height: '100%' }}>
+    {/* 自定义头布局 */}
+    <Header/>
 
-                {/* Page Content */}
-                <section style={{marginTop: "5em"}}>
-                    {this.props.children}
-                </section>
+    {/* Page Content */}
+    <main style={{
+      marginTop: '5em',
+      display: 'block',
+      position: 'absolute',
+      overflow: 'auto',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
+    }}>{props.children}</main>
 
-                {/* Message */}
-                {renderIf(this.props.common.message.open, () => (
-                    <div style={{
-                        boxShadow: level2,
-                        position: "fixed",
-                        right: "2em",
-                        bottom: "2em",
-                        backgroundColor: black,
-                        color: white,
-                        borderRadius: "3em",
-                        maxWidth: "30em"
-                    }}>
-                        <span style={{
-                            float: "left",
-                            padding: "1em 0em 1em 2em",
-                            marginRight: "4em",
-                            color: white
-                        }}>{this.props.common.message.text}</span>
+    {/* Message 自定义消息弹窗 */}
+    {renderIf(props.common.message.open, () =>
+      <div style={{
+        boxShadow: level2,
+        position: 'fixed',
+        right: '2em',
+        bottom: '2em',
+        backgroundColor: black,
+        color: white,
+        borderRadius: '3em',
+        maxWidth: '30em',
+      }}>
+        <span style={{
+          float: 'left',
+          padding: '1em 0em 1em 2em',
+          marginRight: '4em',
+          color: white,
+        }}>
+          {props.common.message.text}
+        </span>
 
-                        <Icon
-                            size={1.2}
-                            style={{
-                                position: "absolute",
-                                padding: "0.9em",
-                                cursor: "pointer",
-                                right: "0.5em",
-                                top: 0,
-                                color: white
-                            }}
-                            onClick={this.props.messageHide}>
-                            close
-                        </Icon>
-                    </div>
-                ))}
-                <Footer/>
+        <Icon
+          size={1.2} style={{
+          position: 'absolute',
+          padding: '0.9em',
+          cursor: 'pointer',
+          right: '0.5em',
+          top: 0,
+          color: white,
+        }} onClick={props.messageHide}>
+          close
+        </Icon>
+      </div>
+    )}
 
-            </div>
-        );
-    }
-}
+    {/* 自定义尾部布局 */}
+    {/*<Footer />*/}
+  </section>
+;
 
 // Component Properties
 Layout.propTypes = {
-    common: PropTypes.object.isRequired,
-    messageHide: PropTypes.func.isRequired
+  common: PropTypes.object.isRequired,
+  messageHide: PropTypes.func.isRequired,
 };
 
 // Component Properties
-// Layout.defaultProps = {
-//     common: {
-//         message: {text: "知道了", open: true}
-//     },
-//     messageHide: {}
-// };
+//Layout.defaultProps = {
+//	common: {
+//		message: { text: '知道了', open: true },
+//	},
+//	messageHide: {},
+//};
 
-const commonState = (state) => {
-    return {
-        common: state.common
-    }
-}
+const commonState = (state) => ({
+  common: state.common,
+});
 
-export default connect(commonState, {messageHide})(Layout)
+export default connect(commonState, { messageHide })(Layout);

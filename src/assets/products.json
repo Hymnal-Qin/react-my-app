@@ -1,0 +1,78 @@
+{
+  "code": 200,
+  "message": "get products success",
+  "data": [
+    {
+      "id": 1,
+      "name": "测试商品1",
+      "slug": 1,
+      "description": "这是一个测试商品1",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 2,
+      "name": "测试商品2",
+      "slug": 2,
+      "description": "这是一个测试商品2",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 3,
+      "name": "测试商品3",
+      "slug": 3,
+      "description": "这是一个测试商品3",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 4,
+      "name": "测试商品4",
+      "slug": 4,
+      "description": "这是一个测试商品4",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 5,
+      "name": "测试商品5",
+      "slug": 5,
+      "description": "这是一个测试商品5",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 6,
+      "name": "测试商品6",
+      "slug": 6,
+      "description": "这是一个测试商品6",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 7,
+      "name": "测试商品7",
+      "slug": 7,
+      "description": "这是一个测试商品7",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    },
+    {
+      "id": 8,
+      "name": "测试商品8",
+      "slug": 8,
+      "description": "这是一个测试商品8",
+      "image": "/images/crate.png",
+      "createAt": "1590196828377",
+      "updateAt": "1590196828377"
+    }
+  ]
+}

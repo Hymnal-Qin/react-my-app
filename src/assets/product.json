@@ -1,0 +1,110 @@
+{
+  "code": 200,
+  "message": "获取商品列表成功",
+  "data": [
+    {
+      "id": 1,
+      "user": {
+        "name": "测试商店1",
+        "email": "test1@test1.com"
+      },
+      "crate": {
+        "id": 1,
+        "name": "测试商品1",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 2,
+      "user": {
+        "name": "测试商店2",
+        "email": "test2@test2.com"
+      },
+      "crate": {
+        "id": 2,
+        "name": "测试商品2",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 3,
+      "user": {
+        "name": "测试商店3",
+        "email": "test3@test3.com"
+      },
+      "crate": {
+        "id": 3,
+        "name": "测试商品3",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 4,
+      "user": {
+        "name": "测试商店4",
+        "email": "test4@test4.com"
+      },
+      "crate": {
+        "id": 4,
+        "name": "测试商品4",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 5,
+      "user": {
+        "name": "测试商店5",
+        "email": "test5@test5.com"
+      },
+      "crate": {
+        "id": 5,
+        "name": "测试商品5",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 6,
+      "user": {
+        "name": "测试商店6",
+        "email": "test4@test4.com"
+      },
+      "crate": {
+        "id": 6,
+        "name": "测试商品6",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 7,
+      "user": {
+        "name": "测试商店7",
+        "email": "test4@test4.com"
+      },
+      "crate": {
+        "id": 7,
+        "name": "测试商品7",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    },
+    {
+      "id": 8,
+      "user": {
+        "name": "测试商店8",
+        "email": "test4@test4.com"
+      },
+      "crate": {
+        "id": 8,
+        "name": "测试商品8",
+        "description": "这是一件测试商品"
+      },
+      "createdAt": "1590196828377"
+    }
+  ]
+}

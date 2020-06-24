@@ -1,6 +1,8 @@
-import * as product from "./product";
+import * as product from './product';
+import * as dashboard from './dashboard';
 
 const admin = {
-	...product
+	...dashboard,
+	...product,
 };
 export default admin;

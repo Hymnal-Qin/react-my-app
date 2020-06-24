@@ -1,84 +1,31 @@
-import React, {Component} from "react";
-import {Helmet} from "react-helmet";
+import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 // UI
-import {Grid, GridCell} from "../../components/grid";
-import {Tile as ImageTile} from "../../components/image";
-import {level1} from "../../components/values/shadows";
+import { Grid, GridCell } from '@components/grid';
+import Adornment from '@modules/Adornment';
 
 // Module
-import SignIn from "../../modules/user/SignIn";
-import {routeLocal} from "../../routes";
+import SignIn from '@modules/user/SignIn';
+import AuthCheck from '@modules/auth/AuthCheck';
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: this.props.name,
-            password: "",
-            error: null
-        };
-    }
+const Login = () =>
+  <Grid alignCenter style={{ padding: '2em' }}>
+    {/* SEO */}
+    <Helmet>
+      <title>Login to your account</title>
+    </Helmet>
 
-    handleChange = e => {
-        e.preventDefault();
-        const label = e.target.id;
-        const value = e.target.value;
-        console.log(label);
-        console.log(value);
-        this.setState({
-            error: value
-        });
-    };
+    {/* Left Content - Image Collage */}
+    <Adornment images={['/images/stock/women/1.jpg', '/images/stock/men/2.jpg', '/images/stock/men/3.jpg']}/>
 
-    render() {
-        return (
-            <Grid gutter={true} alignCenter={true} style={{padding: "2em"}}>
-                {/* SEO */}
-                <Helmet>
-                    <title>Login to your account</title>
-                </Helmet>
+    <GridCell justifyCenter style={{ textAlign: 'center' }}>
+      <SignIn/>
+    </GridCell>
 
-                {/* Left Content - Image Collage */}
-                <GridCell>
-                    <Grid gutter={true} alignCenter={true}>
-                        <GridCell justifyCenter={true}>
-                            <ImageTile
-                                width={300}
-                                height={530}
-                                shadow={level1}
-                                image={`${routeLocal}/images/stock/women/1.jpg`}/>
-                        </GridCell>
-                        <GridCell>
-                            <Grid>
-                                <GridCell justifyCenter={true}>
-                                    <ImageTile
-                                        width={170}
-                                        height={250}
-                                        shadow={level1}
-                                        image={`${routeLocal}/images/stock/women/2.jpg`}/>
-                                </GridCell>
-                            </Grid>
-                            <Grid>
-                                <GridCell justifyCenter={true}>
-                                    <ImageTile
-                                        width={170}
-                                        height={250}
-                                        shadow={level1}
-                                        style={{marginTop: "1.9em"}}
-                                        image={`${routeLocal}/images/stock/women/3.jpg`}/>
-                                </GridCell>
-                            </Grid>
-                        </GridCell>
-                    </Grid>
-                </GridCell>
-
-                <GridCell justifyCenter={true} style={{textAlign: "center"}}>
-                    <SignIn/>
-                </GridCell>
-            </Grid>
-        );
-    }
-}
+    {/* Auth Check */}
+    <AuthCheck/>
+  </Grid>
+;
 
 export default Login;
