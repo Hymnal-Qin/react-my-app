@@ -1,4 +1,4 @@
-import http from '../../../config/httpconfig';
+import http from '@utils/httpconfig';
 
 export function cratesApi(params) {
   return http.get('/crates', params);

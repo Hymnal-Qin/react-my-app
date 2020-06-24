@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 
 // App Imports
-import { NODE_ENV } from '../config/env';
+import { NODE_ENV } from '@/react-app-env';
 
 export default function(app) {
   console.info('SETUP - Load modules..');

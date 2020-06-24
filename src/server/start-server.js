@@ -1,4 +1,4 @@
-import { NODE_ENV, PORT } from '../config/env';
+import { NODE_ENV, PORT } from '@/react-app-env';
 
 export default function(server) {
   console.info('SETUP - Start server..');

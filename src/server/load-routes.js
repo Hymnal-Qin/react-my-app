@@ -9,9 +9,9 @@ import thunk from 'redux-thunk';
 import { flushToHTML } from 'styled-jsx/server';
 
 // App Imports
-import { APP_URL, NODE_ENV } from '../config/env';
-import { rootReducer } from '../store/store';
-import { routes } from '../routes';
+import { APP_URL, NODE_ENV } from '@/react-app-env';
+import { rootReducer } from '@store/store';
+import { routes } from '@/routes';
 
 //import App from '../client/App';
 import view from '../server/view';
