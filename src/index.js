@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { store } from './store/store';
-import { initUser } from './store/user/actions';
+import { store } from '@store/store';
+import { initUser } from '@store/user/actions';
 import * as serviceWorker from './serviceWorker';
 
 // css
@@ -23,9 +23,8 @@ const Index = () => (
     {/*<GlobalStyle />*/}
     {/* 创建一个history BrowserRouter */}
     <Router>
-      <ScrollToTop>
-        <App/>
-      </ScrollToTop>
+      <ScrollToTop/>
+      <App/>
     </Router>
   </Provider>
 );

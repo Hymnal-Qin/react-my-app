@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
-import { routeLocal } from '../../routes';
+import { routeLocal } from '@routes';
 
-import { Grid, GridCell } from '../../components/grid';
-import { H1, H6 } from '../../components/typography';
-import { Button } from '../../components/button';
-import { Modal } from '../../components/modal';
+import { Grid, GridCell } from '@components/grid';
+import { H1, H6 } from '@components/typography';
+import { Button } from '@components/button';
+import { Modal } from '@components/modal';
 
-import { white } from '../../components/values/colors';
-import { textLevel1 } from '../../components/values/shadows';
+import { white } from "@components/values/colors";
+import { textLevel1 } from "@components/values/shadows";
 
 class Onboarding extends PureComponent {
 

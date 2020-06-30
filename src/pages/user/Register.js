@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import SignUp from '../../modules/user/SignUp';
+import SignUp from '@modules/user/SignUp';
 import { Helmet } from 'react-helmet';
-import Adornment from '../../modules/Adornment';
-import { Grid, GridCell } from '../../components/grid';
-import AuthCheck from '../../modules/auth/AuthCheck';
+import Adornment from '@modules/Adornment';
+import { Grid, GridCell } from '@components/grid';
+import AuthCheck from '@modules/auth/AuthCheck';
 
 const Register = () =>
   <Grid alignCenter style={{ padding: '2em' }}>

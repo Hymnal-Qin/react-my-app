@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
 
-import { get } from '../../store/product/actions';
-import Loading from '../../layout/Loading';
-import { renderIf } from '../../utils/helpers';
-import homeRoutes from '../../routes/home';
+import { get } from "@store/product/actions";
+import Loading from '@layout/Loading';
+import { renderIf } from "@utils/helpers";
+import homeRoutes from '@routes/home';
 import { Helmet } from 'react-helmet/es/Helmet';
-import { routeLocal } from '../../routes';
-import { Grid, GridCell } from '../../components/grid';
-import { H2, H3, H4 } from '../../components/typography';
-import Card from '../../components/card/Card';
-import { grey, grey2 } from '../../components/values/colors';
-import Related from '../../modules/product/Related';
+import { routeLocal } from '@routes';
+import { Grid, GridCell } from '@components/grid';
+import { H2, H3, H4 } from '@components/typography';
+import Card from '@components/card/Card';
+import { grey, grey2 } from "@components/values/colors";
+import Related from '@modules/product/Related';
 
 class Detail extends PureComponent {
 

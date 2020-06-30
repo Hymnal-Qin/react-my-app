@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Grid, GridCell } from '../../components/grid';
+import { Grid, GridCell } from '@components/grid';
 import { Helmet } from 'react-helmet';
-import { grey3 } from '../../components/values/colors';
+import { grey3 } from "@components/values/colors";
 
 const Dashboard = () => (
 	<div>

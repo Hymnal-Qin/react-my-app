@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 // UI
-import { primary as primaryGradient } from '../../components/values/gradients';
-import { level1 } from '../../components/values/shadows';
-import { Grid, GridCell } from '../../components/grid';
+import { primary as primaryGradient } from '@components/values/gradients';
+import { level1 } from '@components/values/shadows';
+import { Grid, GridCell } from '@components/grid';
 // Module
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 import Logo from './Logo';
 // route
-import userRoutes from '../../routes/user';
-import * as admin from '../../routes/admin/dashboard';
-import crateRoutes from '../../routes/crate';
-import homeRoutes from '../../routes/home';
+import userRoutes from '@routes/user';
+import * as admin from '@routes/admin/dashboard';
+import crateRoutes from '@routes/crate';
+import homeRoutes from '@routes/home';
 
 const Header = (props) => (
   <header

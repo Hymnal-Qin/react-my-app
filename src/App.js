@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { routes } from './routes';
+import { routes } from '@routes';
 
-import Layout from './layout/Layout';
-import RoutePrivate from './modules/auth/RoutePrivate';
-import NotFound from './layout/NotFound';
+import Layout from '@layout/Layout';
+import RoutePrivate from '@modules/auth/RoutePrivate';
+import NotFound from '@layout/NotFound';
 
 const App = () => (
   <Layout>

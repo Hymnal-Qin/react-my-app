@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { renderIf } from '../utils/helpers';
+import { renderIf } from '@utils/helpers';
 // UI
-import { level2 } from '../components/values/shadows';
-import { black, white } from '../components/values/colors';
+import { level2 } from '@components/values/shadows';
+import { black, white } from '@components/values/colors';
 import { Icon } from '../components/icon';
 // Module
 import Header from './header/Header';
-import { messageHide } from '../store/common/actions';
+import { messageHide } from '@store/common/actions';
+import Footer from "@layout/footer/Footer";
+import AlertMessage from "@layout/AlertMessage";
 
 const Layout = (props) =>
   <section  style={{ height: '100%' }}>
@@ -30,41 +32,11 @@ const Layout = (props) =>
 
     {/* Message 自定义消息弹窗 */}
     {renderIf(props.common.message.open, () =>
-      <div style={{
-        boxShadow: level2,
-        position: 'fixed',
-        right: '2em',
-        bottom: '2em',
-        backgroundColor: black,
-        color: white,
-        borderRadius: '3em',
-        maxWidth: '30em',
-      }}>
-        <span style={{
-          float: 'left',
-          padding: '1em 0em 1em 2em',
-          marginRight: '4em',
-          color: white,
-        }}>
-          {props.common.message.text}
-        </span>
-
-        <Icon
-          size={1.2} style={{
-          position: 'absolute',
-          padding: '0.9em',
-          cursor: 'pointer',
-          right: '0.5em',
-          top: 0,
-          color: white,
-        }} onClick={props.messageHide}>
-          close
-        </Icon>
-      </div>
+		<AlertMessage text={props.common.message.text} onClick={props.messageHide} ac/>
     )}
 
     {/* 自定义尾部布局 */}
-    {/*<Footer />*/}
+    <Footer />
   </section>
 ;
 

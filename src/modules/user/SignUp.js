@@ -1,101 +1,92 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from "react";
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { register } from '../../store/user/actions';
-import userRoutes from '../../routes/user';
+import { register } from "@store/user/actions";
+import userRoutes from '@routes/user';
 
 // UI
-import Input from '../../components/input/Input';
-import Button from '../../components/button/Button';
-import Icon from '../../components/icon/Icon';
-import Grid from '../../components/grid/Grid';
-import GridCell from '../../components/grid/GridCell';
-import { white } from '../../components/values/colors';
-import H3 from '../../components/typography/H3';
+import Input from '@components/input/Input';
+import Button from '@components/button/Button';
+import Icon from '@components/icon/Icon';
+import Grid from '@components/grid/Grid';
+import GridCell from '@components/grid/GridCell';
+import { white } from "@components/values/colors";
+import H3 from '@components/typography/H3';
 
-class SignUp extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			user: {
-				username: '',
-				email: '',
-				password: '',
-			},
-		};
-	}
+const SignUp = (props) => {
+	const [state, setState] = useState({
+		user: {
+			username: '',
+			email: '',
+			password: '',
+		},
+	})
 
-	handleChange = (e) => {
-		const { user } = this.state;
+	const handleChange = (e) => {
+		const { user } = state;
 		user[e.target.name] = e.target.value;
-		this.setState({
-			user,
-		});
+		setState({ user, });
 	};
 
-	onSubmit = (e) => {
+	const onSubmit = (e) => {
 		e.preventDefault();
-		this.props.register(this.state.user); // action 中的 login 函数
-	};
-
-	render() {
-		const { isLoading, error } = this.props.user;
-		return (
-			<Grid gutter alignCenter style={{ padding: '2em' }}>
-				<GridCell gutter style={{ textAlign: 'center' }}>
-					<H3 font="secondary" style={{ marginBottom: '1em' }}>
-						Create an account
-					</H3>
-
-					{/* Login Form */}
-					<form onSubmit={this.onSubmit}>
-						<div style={{ width: '25em', margin: '0 auto' }}>
-							<Input
-								type="text"
-								fullWidth
-								placeholder="Username/Email"
-								required="required"
-								name="username"
-								autocomplete="username"
-								style={{ marginTop: '1em' }}
-								value={this.state.user.username}
-								onChange={this.handleChange}
-							/>
-							<Input
-								type="password"
-								fullWidth
-								placeholder="Password"
-								required="required"
-								name="password"
-								autocomplete="current-password"
-								style={{ marginTop: '1em' }}
-								value={this.state.user.password}
-								onChange={this.handleChange}
-							/>
-						</div>
-						<div style={{ marginTop: '2em' }}>
-							{/* Register link */}
-							<Link to={userRoutes.login.path}>
-								<Button type="button" style={{ marginRight: '0.5em' }}>
-									Sign In
-								</Button>
-							</Link>
-
-							{/* Form submit 触发 submit 事件 */}
-							<Button type="submit" theme="secondary" disabled={isLoading}>
-								Sign Up
-								<Icon size={1.2} style={{ color: white }}>
-									navigate_next
-								</Icon>
-							</Button>
-						</div>
-					</form>
-				</GridCell>
-			</Grid>
-		);
+		props.register(state.user); // action 中的 login 函数
 	}
+	return (
+		<Grid gutter alignCenter style={{ padding: '2em' }}>
+			<GridCell gutter style={{ textAlign: 'center' }}>
+				<H3 font="secondary" style={{ marginBottom: '1em' }}>
+					Create an account
+				</H3>
+
+				{/* Login Form */}
+				<form onSubmit={(e) => onSubmit(e)}>
+					<div style={{ width: '25em', margin: '0 auto' }}>
+						<Input
+							type="text"
+							fullWidth
+							placeholder="Username/Email"
+							required="required"
+							name="username"
+							autocomplete="username"
+							style={{ marginTop: '1em' }}
+							value={state.user.username}
+							onChange={(e) => handleChange(e)}
+						/>
+						<Input
+							type="password"
+							fullWidth
+							placeholder="Password"
+							required="required"
+							name="password"
+							autocomplete="current-password"
+							style={{ marginTop: '1em' }}
+							value={state.user.password}
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+					<div style={{ marginTop: '2em' }}>
+						{/* Register link */}
+						<Link to={userRoutes.login.path}>
+							<Button type="button" style={{ marginRight: '0.5em' }}>
+								Sign In
+							</Button>
+						</Link>
+
+						{/* Form submit 触发 submit 事件 */}
+						<Button type="submit" theme="secondary" disabled={props.isLoading}>
+							Sign Up
+							<Icon size={1.2} style={{ color: white }}>
+								navigate_next
+							</Icon>
+						</Button>
+					</div>
+				</form>
+			</GridCell>
+		</Grid>
+	)
 }
 
 SignUp.propTypes = {

@@ -1,18 +1,13 @@
 // Imports
-import { PureComponent } from 'react';
-import { withRouter } from 'react-router-dom';
+import {PureComponent, useEffect} from 'react';
+import {withRouter} from 'react-router-dom';
 
 // Component
-class ScrollToTop extends PureComponent {
-	componentDidUpdate(prevProps) {
-		if (this.props.location !== prevProps.location) {
-			window.scrollTo(0, 0);
-		}
-	}
-
-	render() {
-		return this.props.children;
-	}
+const ScrollToTop = (props) => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [props.location.pathname])
+	return null;
 }
 
 export default withRouter(ScrollToTop);

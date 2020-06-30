@@ -1,63 +1,52 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { getRelatedList as getProductRelatedList } from '../../store/product/actions';
-import { Grid, GridCell } from '../../components/grid';
-import Loading from '../../layout/Loading';
-import EmptyMessage from '../../layout/EmptyMessage';
-import ProductItem from './Item';
-import { productsRelated } from '../../store/product/state';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-class Related extends PureComponent {
+import { Grid, GridCell } from "@components/grid";
 
-  componentDidMount() {
-    this.refresh(this.props.productId);
-  }
+import Loading from "@layout/Loading";
+import EmptyMessage from "@layout/EmptyMessage";
+import ProductItem from "./Item";
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.productId !== this.props.productId) {
-      this.refresh(nextProps.productId);
-    }
-  }
+import { getRelatedList as getProductRelatedList } from "@store/product/actions";
 
-  refresh = (productId) => {
-    this.props.getProductRelatedList(productId);
-  };
+const Related = (props) => {
 
-  render() {
-    const { isLoading, list } = this.props.productsRelated;
-    return (
-      <div>
-        {/* Related product list */}
-        <Grid>
-          <GridCell>
-            {isLoading
-              ? <Loading/>
-              : list && list.length > 0
-                ? list.map(product => (
-                  <div key={product.id} style={{ margin: '2em', float: 'left' }}>
-                    <ProductItem product={product}/>
-                  </div>
-                ))
-                : <EmptyMessage message="No related products to show."/>}
-          </GridCell>
+	useEffect(() => {
+		props.getProductRelatedList(props.productId);
+	}, [props.productId]);
 
-        </Grid>
-      </div>
-    );
-  }
-}
+	const { isLoading, list } = props.productsRelated;
+	return (
+		<div>
+			{/* Related product list */}
+			<Grid>
+				<GridCell>
+					{isLoading
+						? <Loading/>
+						: list && list.length > 0
+							? list.map(product => (
+								<div key={product.id} style={{ margin: "2em", float: "left" }}>
+									<ProductItem product={product}/>
+								</div>
+							))
+							: <EmptyMessage message="No related products to show."/>}
+				</GridCell>
+
+			</Grid>
+		</div>
+	);
+};
 
 Related.propTypes = {
-  productId: PropTypes.number.isRequired,
-  productsRelated: PropTypes.object.isRequired,
-  getProductRelatedList: PropTypes.func.isRequired,
+	productId: PropTypes.number.isRequired,
+	productsRelated: PropTypes.object.isRequired,
+	getProductRelatedList: PropTypes.func.isRequired
 };
 
 const relatedState = (state) => ({
-  productsRelated: state.productsRelated,
+	productsRelated: state.productsRelated
 });
 
-//eslint-disable-next-line no-undef
 export default connect(relatedState, { getProductRelatedList })(withRouter(Related));

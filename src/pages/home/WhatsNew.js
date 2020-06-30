@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet/es/Helmet';
 
-import { Grid, GridCell } from '../../components/grid';
-import { H3 } from '../../components/typography';
-import { grey, grey2, white } from '../../components/values/colors';
+import { Grid, GridCell } from '@components/grid';
+import { H3 } from '@components/typography';
+import { grey, grey2, white } from "@components/values/colors";
 import { Link } from 'react-router-dom';
-import { Button } from '../../components/button';
-import { Icon } from '../../components/icon';
+import { Button } from '@components/button';
+import { Icon } from '@components/icon';
 
-import crateRoutes from '../../routes/crate';
-import userRoutes from '../../routes/user';
-import { getList as getProductList } from '../../store/product/actions';
-import Loading from '../../layout/Loading';
-import EmptyMessage from '../../layout/EmptyMessage';
-import ProductItem from '../../modules/product/Item';
+import crateRoutes from '@routes/crate';
+import userRoutes from '@routes/user';
+import { getList as getProductList } from '@store/product/actions';
+import Loading from '@layout/Loading';
+import EmptyMessage from '@layout/EmptyMessage';
+import ProductItem from '@modules/product/Item';
 
 class WhatsNew extends PureComponent {
 

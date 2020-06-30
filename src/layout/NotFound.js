@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Grid, GridCell } from '../components/grid';
-import { H3 } from '../components/typography';
-import { routeLocal } from '../routes';
-import { grey } from '../components/values/colors';
+import { Grid, GridCell } from '@components/grid';
+import { H3 } from '@components/typography';
+import { routeLocal } from '@routes';
+import { grey } from '@components/values/colors';
 import { Link } from 'react-router-dom';
-import homeRoutes from '../routes/home';
+import homeRoutes from '@routes/home';
 
 const NotFound = () => (
   <div>

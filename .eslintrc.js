@@ -7,7 +7,7 @@ module.exports = {
 	// 原extends: 'eslint:recommended',
 	extends: ['plugin:react/recommended', 'eslint:recommended', 'prettier'],
 	// required to lint *.vue files 使用 html参数
-	plugins: ['react', 'html', 'prettier'],
+	plugins: ['react', 'html', 'prettier', 'react-hooks'],
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly',
@@ -86,6 +86,8 @@ module.exports = {
 		'react/require-default-props': 0,
 		'no-unused-vars': 1, // 不能有声明后未被使用的变量或参数
 		'no-extra-parens': 1, // 非必要的括号
-		"no-restricted-globals": ["error", "event", "fdescribe"]
+		"no-restricted-globals": ["error", "event", "fdescribe"],
+		'react-hooks/rules-of-hooks': 'error',// 检查 Hook 的规则
+		'"react-hooks/exhaustive-deps': 'warn',// 检查 effect 的依赖
 	},
 };

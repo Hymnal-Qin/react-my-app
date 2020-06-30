@@ -14,7 +14,7 @@ const Button = styled.button`
 	font-family: 'Roboto', sans-serif;
 	cursor: pointer;
 	outline: none;
-  hidefocus: hidefocus;
+  	hidefocus: hidefocus;
 	font-size: 1em;
 	color: ${(props) => (props.theme !== 'none' ? white : black)};
 	box-shadow: ${(props) => (props.theme !== 'none' ? level2 : 'none')};

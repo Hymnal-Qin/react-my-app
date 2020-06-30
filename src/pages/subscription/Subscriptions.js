@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Helmet } from 'react-helmet/es/Helmet';
-import { Grid, GridCell } from '../../components/grid';
-import { grey, grey2 } from '../../components/values/colors';
-import { H3 } from '../../components/typography';
-import Loading from '../../layout/Loading';
-import EmptyMessage from '../../layout/EmptyMessage';
-import SubscriptionItem from '../../modules/subscriptions/Item';
+import { Grid, GridCell } from '@components/grid';
+import { grey, grey2 } from '@components/values/colors';
+import { H3 } from '@components/typography';
+import Loading from '@layout/Loading';
+import EmptyMessage from '@layout/EmptyMessage';
+import SubscriptionItem from '@modules/subscriptions/Item';
 
-import { getListByUser } from '../../store/subscriptions/actions';
+import { getListByUser } from '@store/subscriptions/actions';
 
 
 class Subscriptions extends PureComponent {

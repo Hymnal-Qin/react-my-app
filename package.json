@@ -78,6 +78,7 @@
         "http-proxy-middleware": "^1.0.3",
         "js-cookie": "^2.2.1",
         "morgan": "^1.10.0",
+        "nodemon": "1.19.1",
         "prettier": "^2.0.5",
         "prop-types": "^15.7.2",
         "react-app-rewired": "^2.1.5",
@@ -91,8 +92,7 @@
         "ts-loader": "^6.2.1",
         "typescript": "^3.6.4",
         "typescript-eslint-parser": "^22.0.0",
-        "url-loader": "^2.2.0",
-        "nodemon": "1.19.1"
+        "url-loader": "^2.2.0"
     },
     "repository": "https://github.com/Hymnal-Qin/react-my-app.git",
     "author": "geely-qin <18339989537@163.com>",

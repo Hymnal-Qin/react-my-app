@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { Grid, GridCell } from '../../components/grid';
+import { Grid, GridCell } from '@components/grid';
 import { Helmet } from 'react-helmet/es/Helmet';
-import Adornment from '../../modules/Adornment';
-import { H2, H5 } from '../../components/typography';
-import { Button } from '../../components/button';
+import Adornment from '@modules/Adornment';
+import { H2, H5 } from '@components/typography';
+import { Button } from '@components/button';
 
-import userRoutes from '../../routes/user';
-import crateRoutes from '../../routes/crate';
+import userRoutes from '@routes/user';
+import crateRoutes from '@routes/crate';
 
 const Men = (props) =>
   <Grid alignCenter style={{ padding: '2em' }}>

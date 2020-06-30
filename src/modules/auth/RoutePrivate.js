@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import userRoutes from '../../routes/user';
+import userRoutes from '@routes/user';
 
 //Component
 const RoutePrivate = (props) =>
