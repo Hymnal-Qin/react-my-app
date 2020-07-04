@@ -1,26 +1,25 @@
-import React, { Component, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import { login } from "@/store/user/actions";
-import userRoutes from "@/routes/user";
-
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { login } from '@/store/user/actions';
+import userRoutes from '@/routes/user';
 // UI
-import Input from "@/components/input/Input";
-import Button from "@/components/button/Button";
-import Icon from "@/components/icon/Icon";
-import Grid from "@/components/grid/Grid";
-import GridCell from "@/components/grid/GridCell";
-import { white } from "@/components/values/colors";
-import H3 from "@/components/typography/H3";
+import Input from '@/components/input/Input';
+import Button from '@/components/button/Button';
+import Icon from '@/components/icon/Icon';
+import Grid from '@/components/grid/Grid';
+import GridCell from '@/components/grid/GridCell';
+import { white } from '@/components/values/colors';
+import H3 from '@/components/typography/H3';
 
 const SignIn = (props) => {
 	const [state, setState] = useState({
 		user: {
-			username: "18339989537",
-			password: "123456"
-		}
+			username: '18339989537',
+			password: '123456',
+		},
 	});
 
 	const handleChange = (e) => {
@@ -35,15 +34,15 @@ const SignIn = (props) => {
 	};
 
 	return (
-		<Grid gutter alignCenter style={{ padding: "2em" }}>
-			<GridCell gutter style={{ textAlign: "center" }}>
-				<H3 font="secondary" style={{ marginBottom: "1em" }}>
+		<Grid gutter alignCenter style={{ padding: '2em' }}>
+			<GridCell gutter style={{ textAlign: 'center' }}>
+				<H3 font="secondary" style={{ marginBottom: '1em' }}>
 					Login to your account
 				</H3>
 
 				{/* Login Form */}
 				<form onSubmit={(e) => onSubmit(e)}>
-					<div style={{ width: "25em", margin: "0 auto" }}>
+					<div style={{ width: '25em', margin: '0 auto' }}>
 						<Input
 							type="text"
 							fullWidth
@@ -51,7 +50,7 @@ const SignIn = (props) => {
 							required="required"
 							name="username"
 							autocomplete="username"
-							style={{ marginTop: "1em" }}
+							style={{ marginTop: '1em' }}
 							value={state.user.username}
 							onChange={(e) => handleChange(e)}
 						/>
@@ -62,15 +61,15 @@ const SignIn = (props) => {
 							required="required"
 							name="password"
 							autocomplete="current-password"
-							style={{ marginTop: "1em" }}
+							style={{ marginTop: '1em' }}
 							value={state.user.password}
 							onChange={(e) => handleChange(e)}
 						/>
 					</div>
-					<div style={{ marginTop: "2em" }}>
+					<div style={{ marginTop: '2em' }}>
 						{/* Register link */}
 						<Link to={userRoutes.register.path}>
-							<Button type="button" style={{ marginRight: "0.5em" }}>
+							<Button type="button" style={{ marginRight: '0.5em' }}>
 								Sign Up
 							</Button>
 						</Link>
@@ -92,7 +91,7 @@ const SignIn = (props) => {
 
 SignIn.propTypes = {
 	user: PropTypes.object.isRequired,
-	login: PropTypes.func.isRequired
+	login: PropTypes.func.isRequired,
 };
 
 // redux 统一管理state 并映射到 props 不需要 defaultProps
@@ -112,7 +111,7 @@ SignIn.propTypes = {
 //     };
 // }
 const loginState = (state) => ({
-	user: state.user
+	user: state.user,
 });
 // map state to props 将state中的某个数据映射到props中
 // mapDispatchToProps 把各种dispatch也变成了props让你可以直接使用

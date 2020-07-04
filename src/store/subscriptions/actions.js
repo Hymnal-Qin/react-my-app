@@ -1,5 +1,5 @@
 import { subscriptionApi, subscriptionCreate, subscriptionRemove, subscriptionsApi } from './api';
-import product from '../../assets/product';
+import product from '@assets/subscriptions.json';
 import { MESSAGE_SHOW, messageHide, messageShow } from '../common/actions';
 
 export const SUBSCRIPTIONS_GET_LIST_REQUEST = 'SUBSCRIPTIONS/GET_LIST_REQUEST';
@@ -28,12 +28,12 @@ export function getList(isLoading = true) {
 
     const [error, subscriptions] = await subscriptionsApi(null);
 
-    if (subscriptions || product.data) {
+    if (subscriptions) {
       dispatch({
         type: SUBSCRIPTIONS_GET_LIST_RESPONSE,
         error: null,
         isLoading: false,
-        list: subscriptions || product.data,
+        list: subscriptions,
       });
     }
 
@@ -58,12 +58,12 @@ export function getListByUser(isLoading = true) {
 
     const [error, subscriptions] = await subscriptionsApi();
 
-    if (subscriptions || product.data) {
+    if (subscriptions) {
       dispatch({
         type: SUBSCRIPTIONS_GET_LIST_BY_USER_RESPONSE,
         error: null,
         isLoading: false,
-        list: subscriptions || product.data,
+        list: subscriptions,
       });
     }
 

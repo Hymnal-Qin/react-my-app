@@ -1,4 +1,3 @@
-import productsTest from '../../assets/products';
 // Actions Types
 import { getApi, getListApi, getRelatedListApi } from './api';
 
@@ -25,12 +24,12 @@ export function getList(isLoading = true, forceRefresh = false) {
     });
 
     const [error, products] = await getListApi();
-    if (products || productsTest.data) {
+    if (products) {
       dispatch({
         type: PRODUCTS_GET_LIST_RESPONSE,
         isLoading: false,
         error: null,
-        list: products || productsTest.data,
+        list: products,
       });
     }
 
@@ -53,24 +52,22 @@ export function get(slug, isLoading = true) {
     });
     const [error, product] = await getApi(slug);
 
-    const products = productsTest.data;
-    const item = products.filter(productItem => productItem.slug == slug );
-    if (product || item[0]) {
+    if (product) {
       dispatch({
         type: PRODUCTS_GET_RESPONSE,
         error: null,
         isLoading: false,
-        item: product || item[0],
+        item: product,
       });
     }
 
-    //if (error) {
-    //  dispatch({
-    //    type: PRODUCTS_GET_FAILURE,
-    //    error: 'Some error occurred. Please try again.',
-    //    isLoading: false,
-    //  });
-    //}
+    if (error) {
+     dispatch({
+       type: PRODUCTS_GET_FAILURE,
+       error: 'Some error occurred. Please try again.',
+       isLoading: false,
+     });
+    }
   };
 }
 
@@ -92,12 +89,12 @@ export function getRelatedList(productId, isLoading = true) {
 
     const [error, products] = await getRelatedListApi(productId);
 
-    if (products || productsTest.data) {
+    if (products) {
       dispatch({
         type: PRODUCTS_GET_RELATED_LIST_RESPONSE,
         error: null,
         isLoading: false,
-        list: products || productsTest.data,
+        list: products,
         productId: productId,
       });
     }

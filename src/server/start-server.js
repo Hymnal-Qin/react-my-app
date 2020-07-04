@@ -1,13 +1,13 @@
-import { NODE_ENV, PORT } from '@/react-app-env';
+import { NODE_ENV, EXPRESS_PORT, PORT } from '../react-app-env';
 
 export default function(server) {
-  console.info('SETUP - Start server..');
+	console.info('SETUP - Start server..');
 
-  server.listen(9030, (error) => {
-    if (error) {
-      return console.error(error);
-    } else {
-      return console.info(`Server running on http://localhost:${PORT} [${NODE_ENV}]`);
-    }
-  });
+	server.listen(8004, (error) => {
+		if (error) {
+			return console.error(error);
+		} else {
+			return console.info(`Server running on http://localhost:${8004} [${8004}]`);
+		}
+	});
 }

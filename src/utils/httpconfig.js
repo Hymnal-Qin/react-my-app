@@ -12,6 +12,7 @@ const instance = axios.create({
 		switch (status) {
 			case 400:
 				break;
+			default:
 		}
 		// 更改状态码 不怎么用
 		return status >= 200 && status < 300;

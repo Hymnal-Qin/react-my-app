@@ -5,7 +5,7 @@ import user from './user';
 import crate from './crate';
 import product from './product';
 
-import { APP_URL, APP_URL_API } from '@/react-app-env.d.ts';
+import { APP_URL, APP_URL_API } from '@/react-app-env';
 
 // Combined routes
 export const routes = Object.assign(admin, home, user, other, crate, product);

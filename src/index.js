@@ -11,22 +11,22 @@ import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './css/Global.style';
 
 import App from './App';
-import ScrollToTop from './layout/ScrollToTop';
+import ScrollToTop from '@layout/ScrollToTop';
 
 // User Authentication
 initUser();
 
 // App
 const Index = () => (
-  <Provider store={store} key="provider">
-    {/* Global style */}
-    {/*<GlobalStyle />*/}
-    {/* 创建一个history BrowserRouter */}
-    <Router>
-      <ScrollToTop/>
-      <App/>
-    </Router>
-  </Provider>
+	<Provider store={store} key="provider">
+		{/* Global style */}
+		{/*<GlobalStyle />*/}
+		{/* 创建一个history BrowserRouter */}
+		<Router>
+			<ScrollToTop/>
+			<App/>
+		</Router>
+	</Provider>
 );
 
 ReactDOM.render(<Index/>, document.getElementById('root'));

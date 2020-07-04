@@ -4,25 +4,28 @@ import Express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
-
 // App Imports
-import { NODE_ENV } from '@/react-app-env';
+import { NODE_ENV } from '../react-app-env';
+import cors from 'cors';
 
 export default function(app) {
-  console.info('SETUP - Load modules..');
+	console.info('SETUP - Load modules..');
 
-  // Request body parser
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
+	// Enable CORS
+	app.use(cors());
 
-  // Request body cookie parser
-  app.use(cookieParser());
+	// Request body parser
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({ extended: false }));
 
-  // Public (static) files folder
-  app.use(Express.static(path.join(__dirname, '..', '..', '..', 'public')));
+	// Request body cookie parser
+	app.use(cookieParser());
 
-  // HTTP logger
-  if (NODE_ENV === 'development') {
-    app.use(morgan('tiny'));
-  }
+	// Public (static) files folder
+	// app.use(Express.static(path.join(__dirname, "..", "..", "public")));
+
+	// HTTP logger
+	if (NODE_ENV === 'development') {
+		app.use(morgan('tiny'));
+	}
 }

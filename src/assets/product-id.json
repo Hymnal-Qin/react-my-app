@@ -1,0 +1,13 @@
+{
+  "code": 200,
+  "message": "get products success",
+  "data": {
+    "id": 1,
+    "name": "测试商品1",
+    "slug": 1,
+    "description": "这是一个测试商品1",
+    "image": "/images/crate.png",
+    "createAt": "1590196828377",
+    "updateAt": "1590196828377"
+  }
+}

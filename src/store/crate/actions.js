@@ -22,12 +22,12 @@ export function getList(orderBy = 'DESC', isLoading = true) {
 
     const [error, crates] = await cratesApi(orderBy);
 
-    if (crates || cratesTest.data) {
+    if (crates) {
       dispatch({
         type: CRATES_GET_LIST_RESPONSE,
         error: null,
         isLoading: false,
-        list: crates || cratesTest.data,
+        list: crates,
       });
     }
 

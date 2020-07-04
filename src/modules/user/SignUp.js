@@ -1,18 +1,17 @@
-import React, { Component, useState } from "react";
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { register } from "@store/user/actions";
+import { register } from '@store/user/actions';
 import userRoutes from '@routes/user';
-
 // UI
 import Input from '@components/input/Input';
 import Button from '@components/button/Button';
 import Icon from '@components/icon/Icon';
 import Grid from '@components/grid/Grid';
 import GridCell from '@components/grid/GridCell';
-import { white } from "@components/values/colors";
+import { white } from '@components/values/colors';
 import H3 from '@components/typography/H3';
 
 const SignUp = (props) => {
@@ -22,18 +21,18 @@ const SignUp = (props) => {
 			email: '',
 			password: '',
 		},
-	})
+	});
 
 	const handleChange = (e) => {
 		const { user } = state;
 		user[e.target.name] = e.target.value;
-		setState({ user, });
+		setState({ user });
 	};
 
 	const onSubmit = (e) => {
 		e.preventDefault();
 		props.register(state.user); // action 中的 login 函数
-	}
+	};
 	return (
 		<Grid gutter alignCenter style={{ padding: '2em' }}>
 			<GridCell gutter style={{ textAlign: 'center' }}>
@@ -86,8 +85,8 @@ const SignUp = (props) => {
 				</form>
 			</GridCell>
 		</Grid>
-	)
-}
+	);
+};
 
 SignUp.propTypes = {
 	user: PropTypes.object.isRequired,

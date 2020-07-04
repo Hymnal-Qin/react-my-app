@@ -5,8 +5,8 @@ import $ from 'jquery';
 
 const Search = () => (
 	<div>
-		<Todo />
-		<JX promise={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />
+		<Todo/>
+		<JX promise={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')}/>
 	</div>
 );
 

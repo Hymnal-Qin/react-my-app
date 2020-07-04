@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { Helmet } from "react-helmet/es/Helmet";
-import { Grid, GridCell } from "@components/grid";
-import { grey, grey2 } from "@components/values/colors";
-import H3 from "@components/typography/H3";
+import { Helmet } from 'react-helmet/es/Helmet';
+import { Grid, GridCell } from '@components/grid';
+import { grey, grey2 } from '@components/values/colors';
+import H3 from '@components/typography/H3';
 
-import Loading from "@layout/Loading";
-import EmptyMessage from "@layout/EmptyMessage";
-import CrateItem from "@modules/crate/Item";
+import Loading from '@layout/Loading';
+import EmptyMessage from '@layout/EmptyMessage';
+import CrateItem from '@modules/crate/Item';
 
-import { getList as getCratesList } from "@store/crate/actions";
+import { getList as getCratesList } from '@store/crate/actions';
 
-const List = (props) => {
+const List = ({ getCratesList, crates }) => {
 
 	useEffect(() => {
-		props.getCratesList('ASC')
-	}, [])
+		getCratesList('ASC');
+	}, []);
 
 	return (
 		<div>
@@ -38,10 +38,10 @@ const List = (props) => {
 				{/* Crate List */}
 				<Grid>
 					<GridCell>
-						{props.crates.isLoading
+						{crates.isLoading
 							? <Loading/>
-							: props.crates.list.length > 0
-								? props.crates.list.map(crate => (
+							: crates.list.length > 0
+								? crates.list.map(crate => (
 									<div key={crate.id} style={{ margin: '2em', float: 'left' }}>
 										<CrateItem crate={crate}/>
 									</div>
@@ -52,16 +52,16 @@ const List = (props) => {
 				</Grid>
 			</Grid>
 		</div>
-	)
-}
+	);
+};
 
 List.propTypes = {
-  crates: PropTypes.object.isRequired,
-  getCratesList: PropTypes.func.isRequired,
+	crates: PropTypes.object.isRequired,
+	getCratesList: PropTypes.func.isRequired,
 };
 
 const listState = (state) => ({
-  crates: state.crates,
+	crates: state.crates,
 });
 
 export default connect(listState, { getCratesList })(List);

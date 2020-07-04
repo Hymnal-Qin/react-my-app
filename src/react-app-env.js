@@ -2,7 +2,8 @@
 //import dotenv from 'dotenv';
 // dotenv 从文件加载环境变量
 // Load .env.development
-//dotenv.config();
+
+// Load .env
 require('dotenv').config();
 
 // URL
@@ -25,3 +26,6 @@ export const PORT = process.env.PORT || 3000;
  APP_URL 当前client的IP和端口号
  APP_URL_API 接口server的IP和端口号
  **/
+
+//server port
+export const EXPRESS_PORT = process.env.EXPRESS_PORT

@@ -2,14 +2,7 @@ const { override, addWebpackAlias, addDecoratorsLegacy } = require('customize-cr
 const path = require('path');
 
 const resolveApp = (resolvePath) => path.join(__dirname, resolvePath);
-// // 别名
-// const alias = {
-// 	'@': resolveApp('src'),
-// 	components: resolveApp('src/components'),
-// 	pages: resolveApp('src/pages'),
-// 	utils: resolveApp('src/utils'),
-// };
-
+// 别名
 const alias = {
 	"@": resolveApp("src"),
 	"@assets": resolveApp('src/assets'),
