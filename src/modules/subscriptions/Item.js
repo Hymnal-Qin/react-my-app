@@ -14,7 +14,7 @@ import { getListByUser, remove } from "@store/subscriptions/actions";
 
 const Item = (props) => {
 	const [state, setState] = useState({ isLoading: false });
-	const onClickUnsubscribe = (id) => {
+	const onUnsubscribe = (id) => {
 		let check = window.confirm("Are you sure you want to unsubscribe to this crate?");
 		if (check) {
 			setState({ isLoading: true });
@@ -46,7 +46,7 @@ const Item = (props) => {
 				<p style={{ textAlign: "center", marginTop: "1.5em", marginBottom: "1em" }}>
 					<Button
 						theme="secondary"
-						onClick={() => onClickUnsubscribe(id)}
+						onClick={() => onUnsubscribe(id)}
 						type="button"
 						disabled={state.isLoading}
 					>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,65 +12,57 @@ import SubscriptionItem from '@modules/subscriptions/Item';
 
 import { getListByUser } from '@store/subscriptions/actions';
 
+const Subscriptions = (props) => {
 
-class Subscriptions extends PureComponent {
+	useEffect(() => {
+		props.getListByUser();
+	}, []);
 
-  // Runs on server only for SSR
-  static fetchData({ store }) {
-    return store.dispatch(getListByUser());
-  }
+	const { isLoading, list } = props.subscriptions;
+	return (
+		<div>
+			{/* SEO */}
+			<Helmet>
+				<title>My Subscriptions - Crate</title>
+			</Helmet>
 
-  componentDidMount() {
-    this.props.getListByUser();
-  }
+			{/* Top title bar */}
+			<Grid style={{ backgroundColor: grey }}>
+				<GridCell style={{ padding: '2em', textAlign: 'center' }}>
+					<H3 font="secondary">My subscriptions</H3>
 
-  render() {
-    return (
-      <div>
-        {/* SEO */}
-        <Helmet>
-          <title>My Subscriptions - Crate</title>
-        </Helmet>
+					<p style={{ marginTop: '1em', color: grey2 }}>The crates you are subscribed to are listed here. You can
+						cancel
+						anytime.</p>
+				</GridCell>
+			</Grid>
 
-        {/* Top title bar */}
-        <Grid style={{ backgroundColor: grey }}>
-          <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-            <H3 font="secondary">My subscriptions</H3>
-
-            <p style={{ marginTop: '1em', color: grey2 }}>The crates you are subscribed to are listed here. You can
-              cancel
-              anytime.</p>
-          </GridCell>
-        </Grid>
-
-        {/* Product list */}
-        <Grid>
-          <GridCell>
-            {this.props.subscriptions.isLoading
-              ? <Loading/>
-              : this.props.subscriptions.list.length
-                ? this.props.subscriptions.list.map((subscription) => (
-                  <div key={subscription.id} style={{ margin: '2em', float: 'left' }}>
-                    <SubscriptionItem subscription={subscription}/>
-                  </div>
-                ))
-                : <EmptyMessage message="You are not subscribed to any crates yet."/>
-            }
-          </GridCell>
-        </Grid>
-      </div>
-    );
-  }
-
-}
+			{/* Product list */}
+			<Grid>
+				<GridCell>
+					{isLoading
+						? <Loading/>
+						: list.length
+							? list.map((subscription) => (
+								<div key={subscription.id} style={{ margin: '2em', float: 'left' }}>
+									<SubscriptionItem subscription={subscription}/>
+								</div>
+							))
+							: <EmptyMessage message="You are not subscribed to any crates yet."/>
+					}
+				</GridCell>
+			</Grid>
+		</div>
+	);
+};
 
 Subscriptions.propTypes = {
-  subscriptions: PropTypes.object.isRequired,
-  getListByUser: PropTypes.func.isRequired,
+	subscriptions: PropTypes.object.isRequired,
+	getListByUser: PropTypes.func.isRequired,
 };
 
 const subscriptionsState = (state) => ({
-  subscriptions: state.subscriptionsByUser,
+	subscriptions: state.subscriptionsByUser,
 });
 
 export default connect(subscriptionsState, { getListByUser })(Subscriptions);

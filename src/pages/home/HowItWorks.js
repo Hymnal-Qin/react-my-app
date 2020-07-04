@@ -2,17 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Helmet } from 'react-helmet/es/Helmet';
 import { connect } from 'react-redux';
-import { Grid, GridCell } from '../../components/grid';
-import { grey, grey2, grey3, white } from '../../components/values/colors';
-import H3 from '../../components/typography/H3';
-import { Icon } from '../../components/icon';
-import { textLevel1 } from '../../components/values/shadows';
-import { H4 } from '../../components/typography';
-import { routeLocal } from '../../routes';
+import { Grid, GridCell } from '@components/grid';
+import { grey, grey2, grey3, white } from '@components/values/colors';
+import { Icon } from '@components/icon';
+import { textLevel1 } from '@components/values/shadows';
+import { H3, H4 } from '@components/typography';
+import { routeLocal } from '@routes';
 import { Link } from 'react-router-dom';
-import crateRoutes from '../../routes/crate';
-import userRoutes from '../../routes/user';
-import { Button } from '../../components/button';
+import crateRoutes from '@routes/crate';
+import userRoutes from '@routes/user';
+import { Button } from '@components/button';
 
 const HowItWorks = (props) => (
   <div>

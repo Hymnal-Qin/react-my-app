@@ -112,7 +112,7 @@ export function create(variables) {
   return async dispatch => {
     dispatch(messageShow('Subscribing, please wait...'));
 
-    const [error, data] = await subscriptionCreate(variables);
+    const [error, data] = await subscriptionCreate(variables)
     if (data) {
       dispatch(messageShow('Subscribed successfully.'));
     }

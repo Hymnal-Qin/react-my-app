@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid, GridCell } from '../components/grid';
-import { Tile as ImageTile } from '../components/image';
-import { level1 } from '../components/values/shadows';
+import { Grid, GridCell } from '@components/grid';
+import { Tile as ImageTile } from '@components/image';
+import { level1 } from '@components/values/shadows';
 
-import { routeLocal } from '../routes';
+import { routeLocal } from '@routes';
 
 const Adornment = (props) =>
 	<GridCell>
