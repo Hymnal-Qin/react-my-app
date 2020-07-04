@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 
 import { Grid, GridCell } from '@components/grid';
 import { Helmet } from 'react-helmet';
-import { grey3 } from "@components/values/colors";
+import { grey3 } from '@components/values/colors';
+import AdminMenu from '@pages/admin/Menu';
 
 const Dashboard = () => (
 	<div>
 		<Helmet>
 			<title>Dashboard - Admin - Crate</title>
 		</Helmet>
+
+		{/* Top menu bar */}
+		<AdminMenu/>
 
 		{/* Page Content */}
 		<Grid style={{ padding: '2em' }}>

@@ -11,3 +11,17 @@ export function getApi(slug, params) {
 export function getRelatedListApi(slug, params) {
   return http.get(`/product/${slug}/related/list`, params);
 }
+
+export function productCreate(params) {
+	return http.post('/product/create', params);
+}
+
+export function productUpdate(params) {
+	return http.post('/product/update', params);
+}
+
+export function productRemove(params) {
+	return http.post('/product/remove', params);
+}
+
+

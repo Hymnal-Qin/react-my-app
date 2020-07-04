@@ -22,7 +22,7 @@ export default function(app) {
 	app.use(cookieParser());
 
 	// Public (static) files folder
-	// app.use(Express.static(path.join(__dirname, "..", "..", "public")));
+	app.use('/api', Express.static(path.join(__dirname, '..', '..', 'public')));
 
 	// HTTP logger
 	if (NODE_ENV === 'development') {
