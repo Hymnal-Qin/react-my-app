@@ -1,6 +1,14 @@
 // Actions Types
-import { getApi, getListApi, getRelatedListApi, productRemove } from './api';
-import { MESSAGE_SHOW, messageShow } from '@store/common/actions';
+import {
+	getApi,
+	getListApi,
+	getRelatedListApi,
+	productCreate,
+	productRemove,
+	productTypes,
+	productUpdate,
+} from './api';
+import { MESSAGE_SHOW, messageHide, messageShow } from '@store/common/actions';
 
 export const PRODUCTS_GET_LIST_REQUEST = 'PRODUCTS/GET_LIST_REQUEST';
 export const PRODUCTS_GET_LIST_RESPONSE = 'PRODUCTS/GET_LIST_RESPONSE';
@@ -74,8 +82,15 @@ export function get(slug, isLoading = true) {
 
 // Get single product by Id
 export function getById(productId) {
-	return dispatch => {
+	return async dispatch => {
 
+		const [error, product] = await getApi(productId);
+		if (product) {
+			return product
+		}
+		if (error) {
+			dispatch(messageShow(error || 'There was some error fetching product types. Please try again.'));
+		}
 	};
 }
 
@@ -110,18 +125,90 @@ export function getRelatedList(productId, isLoading = true) {
 	};
 }
 
-export function remove(variables) {
+export function createOrUpdate(product) {
+
 	return async dispatch => {
 
-		dispatch(messageShow('Deleting, please wait...'))
+		dispatch(messageShow('Saving product, please wait...'));
 
-		const [error, product] = await productRemove(variables)
-		if (product) {
-			dispatch(messageShow('Product deleted successfully.'))
+		const productCreateOrUpdate = (product) => {
+			if (product.id > 0) {
+				return productUpdate(product);
+			} else {
+				delete product.id;
+				return productCreate(product);
+			}
+		};
+		const [error, data] = await productCreateOrUpdate(product);
+
+		if (data) {
+			dispatch(messageShow('Product saved successfully.'));
+			return data;
+		}
+		if (error) {
+			dispatch(messageShow('There was some error. Please try again.'));
+		}
+
+		window.setTimeout(() => {
+			dispatch(messageHide());
+		}, 5000);
+		return null;
+	};
+}
+
+export function create(product) {
+	return async dispatch => {
+
+		dispatch(messageShow('Saving product, please wait...'));
+
+		const [error, result] = await productCreate(product);
+		if (result) {
+			dispatch(messageShow('Product saved successfully.'));
+			return result;
 		}
 
 		if (error) {
-			dispatch(messageShow('There was some error. Please try again.'))
+			dispatch(messageShow('There was some error. Please try again.'));
 		}
+
+		window.setTimeout(() => {
+			dispatch(messageHide());
+		}, 5000);
+	};
+}
+
+export function update(product) {
+	return async dispatch => {
+
+	};
+}
+
+export function remove(variables) {
+	return async dispatch => {
+
+		dispatch(messageShow('Deleting, please wait...'));
+
+		const [error, product] = await productRemove(variables);
+		if (product) {
+			dispatch(messageShow('Product deleted successfully.'));
+			return product;
+		}
+
+		if (error) {
+			dispatch(messageShow('There was some error. Please try again.'));
+			return null;
+		}
+	};
+}
+
+export function getTypes() {
+	return async dispatch => {
+
+		const [error, types] = await productTypes()
+		if (types) return types
+		if (error) {
+			dispatch(messageShow('There was some error fetching product types. Please try again.'))
+		}
+		return null;
 	};
 }

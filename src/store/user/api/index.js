@@ -7,3 +7,7 @@ export function loginApi(params) {
 export function registerApi(params) {
 	return http.post('user/register', params);
 }
+
+export function userGenders(params) {
+	return http.get('user/genders', params);
+}

@@ -42,6 +42,17 @@ router.post('/register', function(req, res, next) {
 		});
 });
 
+router.get('/genders', (request, response) => {
+	response.json({
+		code: 200,
+		message: 'success',
+		data: [
+			{id: 0, name: 'vip0'},
+			{id: 1, name: 'vip1'}
+		],
+	})
+});
+
 
 module.exports = router;
 

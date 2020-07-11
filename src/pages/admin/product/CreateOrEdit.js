@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import { Helmet } from 'react-helmet/es/Helmet';
+import { Link, withRouter } from 'react-router-dom';
+
 import AdminMenu from '@pages/admin/Menu';
 import { Grid, GridCell } from '@components/grid';
-import { Link } from 'react-router-dom';
-import admin from '@routes/admin';
 import { Button } from '@components/button';
 import { Icon } from '@components/icon';
 import { H4 } from '@components/typography';
 import { Input, Select, Textarea } from '@components/input';
+
 import { renderIf, slug } from '@utils/helpers';
+
 import { routeImage } from '@routes/index';
 import { white } from '@components/values/colors';
+import admin from '@routes/admin';
+
+import {
+	createOrUpdate as productCreateOrUpdate,
+	getById as getProductById,
+	getTypes as getProductTypes,
+} from '@store/product/actions';
+import { getGenders as getUserGenders } from '@store/user/actions';
+import { upload } from '@store/common/actions';
 
 
 const CreateOrEdit = (props) => {
@@ -25,9 +39,37 @@ const CreateOrEdit = (props) => {
 			gender: 0,
 			image: '',
 		},
-		productTypes: [{ id: 0, name: 0 }, { id: 1, name: 1 }, { id: 2, name: 2 }],
-		userGenders: [{ id: 0, name: 0 }, { id: 1, name: 1 }, { id: 2, name: 2 }],
+		productTypes: [],
+		userGenders: [],
 	});
+
+	useEffect(() => {
+		props.getProductTypes()
+			.then((types) => {
+				if (types) {
+					let product = state.product
+					product.type = types[0].id
+					setState(state => ({...state, productTypes: types, product: product}))
+				}
+			});
+		props.getUserGenders()
+			.then((userGenders) => {
+				if (userGenders) {
+					let product = state.product
+					product.gender = userGenders[0].id
+					setState(state => ({...state, userGenders: userGenders, product: product}))
+				}
+			});
+
+		// Get product details (edit case)
+		const getProduct = (productId) => {
+			props.getProductById(productId)
+				.then((data) => {
+					if (data) setState(state => ({ ...state, product: data }));
+				});
+		};
+		getProduct(parseInt(props.match.params.id));
+	}, []);
 
 	const onChange = (e) => {
 		let product = state.product;
@@ -45,12 +87,12 @@ const CreateOrEdit = (props) => {
 	const onUpload = (e) => {
 		setState(state => ({ ...state, isLoading: true }));
 		let data = new FormData();
-		data.append('file', e.target.file[0]);
+		data.append('file', e.target.files[0]);
 		props.upload(data)
 			.then((data) => {
 				if (data) {
 					let product = state.product;
-					product.image = `images/uploads/${data.file}`;
+					product.image = `/images/uploads/${data.file}`;
 					setState(state => ({ ...state, product: product }));
 				}
 			})
@@ -60,7 +102,13 @@ const CreateOrEdit = (props) => {
 	};
 
 	const onSubmit = (e) => {
+		e.preventDefault();
 		setState(state => ({ ...state, isLoading: true }));
+		props.productCreateOrUpdate(state.product)
+			.then((data) => {
+				if (data) props.history.push(admin.productList.path);
+			})
+			.then(() => setState(state => ({ ...state, isLoading: false })));
 	};
 
 	return (
@@ -159,6 +207,8 @@ const CreateOrEdit = (props) => {
 								<div style={{ marginTop: '1em' }}>
 									<Input
 										type='file'
+										name='file'
+										multiple='multiple'
 										required={state.product.id === 0}
 										onChange={(e) => onUpload(e)}
 									/>
@@ -185,4 +235,18 @@ const CreateOrEdit = (props) => {
 	);
 };
 
-export default CreateOrEdit;
+CreateOrEdit.propTypes = {
+	productCreateOrUpdate: PropTypes.func.isRequired,
+	getProductById: PropTypes.func.isRequired,
+	getProductTypes: PropTypes.func.isRequired,
+	getUserGenders: PropTypes.func.isRequired,
+	upload: PropTypes.func.isRequired,
+};
+
+export default connect(null, {
+	productCreateOrUpdate,
+	getProductById,
+	getProductTypes,
+	getUserGenders,
+	upload,
+})(withRouter(CreateOrEdit));

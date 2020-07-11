@@ -24,4 +24,8 @@ export function productRemove(params) {
 	return http.post('/product/remove', params);
 }
 
+export function productTypes(params) {
+	return http.get('/product/types', params);
+}
+
 

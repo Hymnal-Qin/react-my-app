@@ -30,8 +30,10 @@ const List = (props) => {
 		let check = window.confirm('Are you sure you want to delete this product?');
 		if (check) {
 			setState({ isLoading: true})
+			console.log('remove')
 			props.removeProduct({ id })
 				.then((data) => {
+					console.log('remove' + data)
 					if (data) props.getProductList(false);
 				})
 				.then(() => {

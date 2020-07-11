@@ -1,7 +1,7 @@
 import axios from 'axios';
 //import {query} from "gql-query-builder";
 import cookie from 'js-cookie';
-import { loginApi, registerApi } from './api';
+import { loginApi, registerApi, userGenders } from './api';
 import { messageShow, messageHide } from '../common/actions';
 import { store } from '../store';
 
@@ -106,4 +106,17 @@ export function logoutUnsetUserLocalStorageAndCookie() {
 	window.localStorage.removeItem('user');
 
 	cookie.remove('auth');
+}
+
+// Get user gender
+export function getGenders() {
+	return async dispatch => {
+
+		const [error, genders] = await userGenders()
+		if (genders) return genders
+		if (error) {
+			dispatch(messageShow('There was some error fetching product types. Please try again.'))
+		}
+		return null
+	};
 }

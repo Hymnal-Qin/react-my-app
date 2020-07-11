@@ -9,8 +9,7 @@ import userRoutes from '@/routes/user';
 import Input from '@/components/input/Input';
 import Button from '@/components/button/Button';
 import Icon from '@/components/icon/Icon';
-import Grid from '@/components/grid/Grid';
-import GridCell from '@/components/grid/GridCell';
+import { Grid, GridCell } from '@/components/grid';
 import { white } from '@/components/values/colors';
 import H3 from '@/components/typography/H3';
 
